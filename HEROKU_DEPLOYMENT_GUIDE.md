@@ -11,7 +11,7 @@ This guide explains how to deploy your app to Heroku with the downloaded product
 ## 🚀 **Deployment Steps:**
 
 ### **1. Ensure Your Code is Ready**
-- ✅ Image URLs updated to use relative paths (`/images/products/...`)
+- ✅ Image URLs use `getImageUrl()` utility function for development/production compatibility
 - ✅ Static file serving configured in `server.js`
 - ✅ Images downloaded to `public/images/products/`
 
