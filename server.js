@@ -12,9 +12,6 @@ app.use(express.urlencoded({ extended: true }));
 // Serve static files from public directory (for downloaded images)
 app.use('/images', express.static(path.join(__dirname, 'public/images')));
 
-// Serve static files from React build directory
-app.use(express.static(path.join(__dirname, 'client/build')));
-
 // API routes
 app.get('/api/health', (req, res) => {
     res.json({ 
@@ -74,10 +71,14 @@ app.get('/api/image-proxy', async (req, res) => {
     }
 });
 
-// Serve React app for all other routes
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-});
+// Serve React app for all other routes (only in production)
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, 'client/build')));
+    
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+    });
+}
 
 // Error handler
 app.use((err, req, res, next) => {

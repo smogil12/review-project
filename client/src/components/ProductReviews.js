@@ -45,7 +45,7 @@ const ProductReviews = () => {
           reviewCount: 89,
           price: "$85.00",
           availability: "In Stock",
-          storeUrl: "https://www.nike.com/w/mens-tech-fleece-1gdj0",
+          storeUrl: "https://www.nike.com/t/sportswear-tech-fleece-windrunner-mens-full-zip-hoodie-rznlBf/FB7921-063",
           reviews: [
             { rating: 5, text: "Excellent quality and fit. Perfect for running in cold weather.", author: "Alex K.", date: "2025-08-04" },
             { rating: 4, text: "Great hoodie, very warm and comfortable.", author: "Lisa T.", date: "2025-08-02" },
@@ -61,7 +61,7 @@ const ProductReviews = () => {
           reviewCount: 234,
           price: "$92.50",
           availability: "In Stock",
-          storeUrl: "https://www.amazon.com/s?k=nike+tech+fleece+hoodie",
+          storeUrl: "https://www.amazon.com/s?k=nike+tech+fleece+hoodie+men&ref=sr_pg_1",
           reviews: [
             { rating: 4, text: "Good quality but expensive. Fits as expected.", author: "Robert L.", date: "2025-08-03" },
             { rating: 3, text: "Nice material but the zipper is a bit stiff.", author: "Emma W.", date: "2025-08-01" },
@@ -119,7 +119,7 @@ const ProductReviews = () => {
           reviewCount: 189,
           price: "$139.99",
           availability: "In Stock",
-          storeUrl: "https://www.amazon.com/s?k=on+cloud+6+men",
+          storeUrl: "https://www.amazon.com/s?k=on+cloud+6+men+running+shoes&ref=sr_pg_1",
           reviews: [
             { rating: 4, text: "Excellent running shoes with great arch support.", author: "Ryan T.", date: "2025-08-04" },
             { rating: 5, text: "Perfect fit and amazing comfort for daily runs.", author: "Amanda K.", date: "2025-08-02" },
