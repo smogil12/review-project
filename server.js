@@ -30,6 +30,8 @@ app.get('/api/image-proxy', async (req, res) => {
             return res.status(400).json({ error: 'URL parameter is required' });
         }
 
+        console.log('Fetching image from:', url);
+
         // Fetch the image from the external URL
         const response = await axios.get(url, {
             responseType: 'arraybuffer',
@@ -39,10 +41,14 @@ app.get('/api/image-proxy', async (req, res) => {
                 'Accept-Language': 'en-US,en;q=0.9',
                 'Accept-Encoding': 'gzip, deflate, br',
                 'Connection': 'keep-alive',
-                'Upgrade-Insecure-Requests': '1'
+                'Upgrade-Insecure-Requests': '1',
+                'Referer': 'https://www.nike.com/'
             },
-            timeout: 10000
+            timeout: 15000,
+            maxRedirects: 5
         });
+
+        console.log('Image fetched successfully, size:', response.data.length);
 
         // Set appropriate headers for the image
         res.setHeader('Content-Type', response.headers['content-type'] || 'image/jpeg');
@@ -54,9 +60,13 @@ app.get('/api/image-proxy', async (req, res) => {
         
     } catch (error) {
         console.error('Image proxy error:', error.message);
+        console.error('Error details:', error.response?.status, error.response?.statusText);
+        
+        // Return a fallback image or error response
         res.status(500).json({ 
             error: 'Failed to fetch image',
-            message: error.message 
+            message: error.message,
+            details: error.response?.statusText || 'Unknown error'
         });
     }
 });
