@@ -24,6 +24,7 @@ const ProductReviews = () => {
       reviewCount: 156,
       price: "$89.99",
       availability: "In Stock",
+      storeUrl: "https://www.dickssportinggoods.com/c/mens-clothing-mens-jackets-hoodies",
       reviews: [
         { rating: 5, text: "Perfect fit and very comfortable. Great for cold weather.", author: "John D.", date: "2024-01-15" },
         { rating: 4, text: "Good quality but runs a bit small. Size up if in between sizes.", author: "Sarah M.", date: "2024-01-10" },
@@ -37,6 +38,7 @@ const ProductReviews = () => {
       reviewCount: 89,
       price: "$85.00",
       availability: "In Stock",
+      storeUrl: "https://www.nike.com/w/mens-tech-fleece-1gdj0",
       reviews: [
         { rating: 5, text: "Excellent quality and fit. Perfect for running in cold weather.", author: "Alex K.", date: "2024-01-14" },
         { rating: 4, text: "Great hoodie, very warm and comfortable.", author: "Lisa T.", date: "2024-01-12" },
@@ -50,6 +52,7 @@ const ProductReviews = () => {
       reviewCount: 234,
       price: "$92.50",
       availability: "In Stock",
+      storeUrl: "https://www.amazon.com/s?k=nike+tech+fleece+hoodie",
       reviews: [
         { rating: 4, text: "Good quality but expensive. Fits as expected.", author: "Robert L.", date: "2024-01-13" },
         { rating: 3, text: "Nice material but the zipper is a bit stiff.", author: "Emma W.", date: "2024-01-11" },
@@ -63,6 +66,7 @@ const ProductReviews = () => {
       reviewCount: 67,
       price: "$87.99",
       availability: "Limited Stock",
+      storeUrl: "https://www.footlocker.com/category/mens/clothing/hoodies-sweatshirts.html",
       reviews: [
         { rating: 4, text: "Solid hoodie, good for everyday wear.", author: "Jennifer B.", date: "2024-01-12" },
         { rating: 5, text: "Love the fit and style. Great purchase.", author: "Tom G.", date: "2024-01-08" },
@@ -318,6 +322,27 @@ const ProductReviews = () => {
                     }`}>
                       {source.availability}
                     </span>
+                  </div>
+                  
+                  {/* Store Link */}
+                  <div className="mt-3">
+                                        {source.storeUrl && (
+                      <a 
+                        href={source.storeUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center px-4 py-2 text-sm font-medium text-blue-600 bg-blue-50 border border-blue-200 rounded-md hover:bg-blue-100 transition-colors"
+                        onClick={() => {
+                          // Add visual feedback
+                          alert(`Opening ${source.name} in a new tab...`);
+                        }}
+                      >
+                        View on {source.name}
+                        <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </a>
+                    )}
                   </div>
                 </div>
 
