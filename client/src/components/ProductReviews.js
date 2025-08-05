@@ -62,7 +62,7 @@ const ProductReviews = () => {
     }
   };
 
-  // Product data with Nike Tech Fleece - using reliable placeholder images and real product URLs
+  // Product data with Nike Tech Fleece - using image proxy for actual product images
   const products = [
     {
       id: 1,
@@ -70,7 +70,7 @@ const ProductReviews = () => {
       color: 'Black',
       price: '$85.00',
       href: 'https://www.nike.com/t/tech-fleece-full-zip-windrunner-hoodie-2KJgvN/DV0810-010',
-      imageSrc: 'https://picsum.photos/400/500?random=1',
+      imageSrc: '/api/image-proxy?url=https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/7c5678f4-c28d-4862-a8d9-56750f839f8d/tech-fleece-full-zip-windrunner-hoodie-2KJgvN.png',
       imageAlt: 'Nike Tech Fleece Full-Zip Windrunner Hoodie in Black',
       retailer: 'Nike.com',
       rating: 4.4,
@@ -82,7 +82,7 @@ const ProductReviews = () => {
       color: 'Gray Heather',
       price: '$89.99',
       href: 'https://www.dickssportinggoods.com/p/nike-mens-tech-full-zip-windrunner-hoodie-24nikmmnktchflcfznfta/24nikmmnktchflcfznfta',
-      imageSrc: 'https://picsum.photos/400/500?random=2',
+      imageSrc: '/api/image-proxy?url=https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/7c5678f4-c28d-4862-a8d9-56750f839f8d/tech-fleece-full-zip-windrunner-hoodie-2KJgvN.png',
       imageAlt: 'Nike Tech Fleece Full-Zip Windrunner Hoodie in Gray Heather',
       retailer: "Dick's Sporting Goods",
       rating: 4.2,
@@ -94,7 +94,7 @@ const ProductReviews = () => {
       color: 'Navy',
       price: '$92.50',
       href: 'https://www.amazon.com/Nike-Tech-Fleece-Windrunner-Hoodie/dp/B0BQJ8VXKQ',
-      imageSrc: 'https://picsum.photos/400/500?random=3',
+      imageSrc: '/api/image-proxy?url=https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/7c5678f4-c28d-4862-a8d9-56750f839f8d/tech-fleece-full-zip-windrunner-hoodie-2KJgvN.png',
       imageAlt: 'Nike Tech Fleece Full-Zip Windrunner Hoodie in Navy',
       retailer: 'Amazon',
       rating: 4.0,
@@ -106,7 +106,7 @@ const ProductReviews = () => {
       color: 'White',
       price: '$87.99',
       href: 'https://www.footlocker.com/product/nike-tech-fleece-full-zip-windrunner-hoodie-mens/24nikmmnktchflcfznfta.html',
-      imageSrc: 'https://picsum.photos/400/500?random=4',
+      imageSrc: '/api/image-proxy?url=https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/7c5678f4-c28d-4862-a8d9-56750f839f8d/tech-fleece-full-zip-windrunner-hoodie-2KJgvN.png',
       imageAlt: 'Nike Tech Fleece Full-Zip Windrunner Hoodie in White',
       retailer: 'Foot Locker',
       rating: 4.1,
@@ -118,7 +118,7 @@ const ProductReviews = () => {
       color: 'Red',
       price: '$90.00',
       href: 'https://www.nike.com/t/tech-fleece-full-zip-windrunner-hoodie-2KJgvN/DV0810-680',
-      imageSrc: 'https://picsum.photos/400/500?random=5',
+      imageSrc: '/api/image-proxy?url=https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/7c5678f4-c28d-4862-a8d9-56750f839f8d/tech-fleece-full-zip-windrunner-hoodie-2KJgvN.png',
       imageAlt: 'Nike Tech Fleece Full-Zip Windrunner Hoodie in Red',
       retailer: 'Nike.com',
       rating: 4.3,
@@ -130,7 +130,7 @@ const ProductReviews = () => {
       color: 'Olive',
       price: '$88.50',
       href: 'https://www.amazon.com/Nike-Tech-Fleece-Windrunner-Hoodie/dp/B0BQJ8VXKQ',
-      imageSrc: 'https://picsum.photos/400/500?random=6',
+      imageSrc: '/api/image-proxy?url=https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/7c5678f4-c28d-4862-a8d9-56750f839f8d/tech-fleece-full-zip-windrunner-hoodie-2KJgvN.png',
       imageAlt: 'Nike Tech Fleece Full-Zip Windrunner Hoodie in Olive',
       retailer: 'Amazon',
       rating: 4.1,
