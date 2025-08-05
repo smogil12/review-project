@@ -31,9 +31,11 @@ const ProductReviews = () => {
           availability: "In Stock",
           storeUrl: "https://www.dickssportinggoods.com/c/mens-clothing-mens-jackets-hoodies",
           reviews: [
-            { rating: 5, text: "Perfect fit and very comfortable. Great for cold weather.", author: "John D.", date: "2024-01-15" },
-            { rating: 4, text: "Good quality but runs a bit small. Size up if in between sizes.", author: "Sarah M.", date: "2024-01-10" },
-            { rating: 5, text: "Love the material and warmth. Worth the price.", author: "Mike R.", date: "2024-01-08" }
+            { rating: 5, text: "Perfect fit and very comfortable. Great for cold weather.", author: "John D.", date: "2025-08-05" },
+            { rating: 4, text: "Good quality but runs a bit small. Size up if in between sizes.", author: "Sarah M.", date: "2025-08-03" },
+            { rating: 5, text: "Love the material and warmth. Worth the price.", author: "Mike R.", date: "2025-08-01" },
+            { rating: 4, text: "Great for workouts and casual wear. Highly recommend!", author: "Jessica L.", date: "2025-07-28" },
+            { rating: 5, text: "Best hoodie I've ever owned. Perfect for running.", author: "Carlos M.", date: "2025-07-25" }
           ]
         },
         'nike-com': {
@@ -45,9 +47,11 @@ const ProductReviews = () => {
           availability: "In Stock",
           storeUrl: "https://www.nike.com/w/mens-tech-fleece-1gdj0",
           reviews: [
-            { rating: 5, text: "Excellent quality and fit. Perfect for running in cold weather.", author: "Alex K.", date: "2024-01-14" },
-            { rating: 4, text: "Great hoodie, very warm and comfortable.", author: "Lisa T.", date: "2024-01-12" },
-            { rating: 5, text: "Best tech fleece I've owned. Highly recommend.", author: "David P.", date: "2024-01-05" }
+            { rating: 5, text: "Excellent quality and fit. Perfect for running in cold weather.", author: "Alex K.", date: "2025-08-04" },
+            { rating: 4, text: "Great hoodie, very warm and comfortable.", author: "Lisa T.", date: "2025-08-02" },
+            { rating: 5, text: "Best tech fleece I've owned. Highly recommend.", author: "David P.", date: "2025-07-30" },
+            { rating: 4, text: "Perfect for morning runs. Lightweight but warm.", author: "Ryan S.", date: "2025-07-27" },
+            { rating: 5, text: "Amazing comfort and style. Worth every penny.", author: "Amanda K.", date: "2025-07-24" }
           ]
         },
         'amazon': {
@@ -59,9 +63,11 @@ const ProductReviews = () => {
           availability: "In Stock",
           storeUrl: "https://www.amazon.com/s?k=nike+tech+fleece+hoodie",
           reviews: [
-            { rating: 4, text: "Good quality but expensive. Fits as expected.", author: "Robert L.", date: "2024-01-13" },
-            { rating: 3, text: "Nice material but the zipper is a bit stiff.", author: "Emma W.", date: "2024-01-11" },
-            { rating: 5, text: "Perfect for my needs. Great customer service too.", author: "Chris H.", date: "2024-01-09" }
+            { rating: 4, text: "Good quality but expensive. Fits as expected.", author: "Robert L.", date: "2025-08-03" },
+            { rating: 3, text: "Nice material but the zipper is a bit stiff.", author: "Emma W.", date: "2025-08-01" },
+            { rating: 5, text: "Perfect for my needs. Great customer service too.", author: "Chris H.", date: "2025-07-29" },
+            { rating: 4, text: "Solid purchase. Good for everyday use.", author: "Daniel P.", date: "2025-07-26" },
+            { rating: 5, text: "Love this hoodie! Perfect fit and great quality.", author: "Maria G.", date: "2025-07-23" }
           ]
         },
         'footlocker': {
@@ -73,9 +79,11 @@ const ProductReviews = () => {
           availability: "Limited Stock",
           storeUrl: "https://www.footlocker.com/category/mens/clothing/hoodies-sweatshirts.html",
           reviews: [
-            { rating: 4, text: "Solid hoodie, good for everyday wear.", author: "Jennifer B.", date: "2024-01-12" },
-            { rating: 5, text: "Love the fit and style. Great purchase.", author: "Tom G.", date: "2024-01-08" },
-            { rating: 4, text: "Good quality, runs true to size.", author: "Rachel M.", date: "2024-01-06" }
+            { rating: 4, text: "Solid hoodie, good for everyday wear.", author: "Jennifer B.", date: "2025-08-02" },
+            { rating: 5, text: "Love the fit and style. Great purchase.", author: "Tom G.", date: "2025-07-30" },
+            { rating: 4, text: "Good quality, runs true to size.", author: "Rachel M.", date: "2025-07-27" },
+            { rating: 5, text: "Excellent hoodie for workouts and casual wear.", author: "Mark T.", date: "2025-07-25" },
+            { rating: 4, text: "Great value for money. Highly recommend!", author: "Sophie L.", date: "2025-07-22" }
           ]
         }
       }
@@ -97,9 +105,11 @@ const ProductReviews = () => {
           availability: "In Stock",
           storeUrl: "https://www.on-running.com/en-us/mens/cloud-6",
           reviews: [
-            { rating: 5, text: "Incredible comfort and cushioning. Perfect for long runs.", author: "Mark S.", date: "2024-01-16" },
-            { rating: 4, text: "Great shoes, very responsive. Good for both road and trail.", author: "Jessica L.", date: "2024-01-14" },
-            { rating: 5, text: "Best running shoes I've ever owned. Highly recommend!", author: "Carlos M.", date: "2024-01-12" }
+            { rating: 5, text: "Incredible comfort and cushioning. Perfect for long runs.", author: "Mark S.", date: "2025-08-05" },
+            { rating: 4, text: "Great shoes, very responsive. Good for both road and trail.", author: "Jessica L.", date: "2025-08-03" },
+            { rating: 5, text: "Best running shoes I've ever owned. Highly recommend!", author: "Carlos M.", date: "2025-08-01" },
+            { rating: 4, text: "Excellent for marathon training. Great cushioning.", author: "Emma R.", date: "2025-07-29" },
+            { rating: 5, text: "Perfect fit and amazing comfort for daily runs.", author: "Alex T.", date: "2025-07-26" }
           ]
         },
         'amazon': {
@@ -111,9 +121,11 @@ const ProductReviews = () => {
           availability: "In Stock",
           storeUrl: "https://www.amazon.com/s?k=on+cloud+6+men",
           reviews: [
-            { rating: 4, text: "Excellent running shoes with great arch support.", author: "Ryan T.", date: "2024-01-15" },
-            { rating: 5, text: "Perfect fit and amazing comfort for daily runs.", author: "Amanda K.", date: "2024-01-13" },
-            { rating: 4, text: "Great quality, runs true to size.", author: "Daniel P.", date: "2024-01-11" }
+            { rating: 4, text: "Excellent running shoes with great arch support.", author: "Ryan T.", date: "2025-08-04" },
+            { rating: 5, text: "Perfect fit and amazing comfort for daily runs.", author: "Amanda K.", date: "2025-08-02" },
+            { rating: 4, text: "Great quality, runs true to size.", author: "Daniel P.", date: "2025-07-30" },
+            { rating: 5, text: "Love these shoes! Perfect for my running style.", author: "Maria G.", date: "2025-07-27" },
+            { rating: 4, text: "Solid purchase. Great for both training and racing.", author: "Chris L.", date: "2025-07-24" }
           ]
         },
         'dicks-sporting-goods': {
@@ -125,9 +137,11 @@ const ProductReviews = () => {
           availability: "Limited Stock",
           storeUrl: "https://www.dickssportinggoods.com/c/mens-running-shoes",
           reviews: [
-            { rating: 5, text: "Outstanding comfort and performance. Great for marathon training.", author: "Lisa R.", date: "2024-01-16" },
-            { rating: 4, text: "Solid running shoes with good cushioning.", author: "Mike J.", date: "2024-01-14" },
-            { rating: 5, text: "Love these shoes! Perfect for my running style.", author: "Sarah W.", date: "2024-01-12" }
+            { rating: 5, text: "Outstanding comfort and performance. Great for marathon training.", author: "Lisa R.", date: "2025-08-03" },
+            { rating: 4, text: "Solid running shoes with good cushioning.", author: "Mike J.", date: "2025-08-01" },
+            { rating: 5, text: "Love these shoes! Perfect for my running style.", author: "Sarah W.", date: "2025-07-28" },
+            { rating: 4, text: "Great for long distance runs. Excellent support.", author: "Kevin M.", date: "2025-07-25" },
+            { rating: 5, text: "Best running shoes I've ever worn. Highly recommend!", author: "Sophie K.", date: "2025-07-22" }
           ]
         },
         'footlocker': {
@@ -139,9 +153,11 @@ const ProductReviews = () => {
           availability: "In Stock",
           storeUrl: "https://www.footlocker.com/category/mens/running-shoes.html",
           reviews: [
-            { rating: 4, text: "Great running shoes with excellent support.", author: "Tom B.", date: "2024-01-15" },
-            { rating: 5, text: "Amazing comfort and perfect for long distances.", author: "Rachel K.", date: "2024-01-13" },
-            { rating: 4, text: "Good quality and responsive feel.", author: "David L.", date: "2024-01-11" }
+            { rating: 4, text: "Great running shoes with excellent support.", author: "Tom B.", date: "2025-08-02" },
+            { rating: 5, text: "Amazing comfort and perfect for long distances.", author: "Rachel K.", date: "2025-07-30" },
+            { rating: 4, text: "Good quality and responsive feel.", author: "David L.", date: "2025-07-27" },
+            { rating: 5, text: "Perfect for my daily runs. Great cushioning.", author: "Jennifer M.", date: "2025-07-24" },
+            { rating: 4, text: "Excellent shoes for both training and racing.", author: "Brian T.", date: "2025-07-21" }
           ]
         }
       }
@@ -182,6 +198,11 @@ const ProductReviews = () => {
 
   const renderStars = (rating) => {
     return '★'.repeat(Math.floor(rating)) + '☆'.repeat(5 - Math.floor(rating));
+  };
+
+  // Sort reviews by date (most recent first)
+  const sortReviewsByDate = (reviews) => {
+    return reviews.sort((a, b) => new Date(b.date) - new Date(a.date));
   };
 
   const filteredReviews = selectedSource === 'all' 
@@ -336,7 +357,7 @@ const ProductReviews = () => {
                 </div>
 
                 <div className="p-6">
-                  {source.reviews.map((review, index) => (
+                  {sortReviewsByDate(source.reviews).map((review, index) => (
                     <div key={index} className="border-b border-gray-100 last:border-b-0 py-4 last:pb-0">
                       <div className="flex items-center space-x-4 mb-2">
                         <span className="text-yellow-400 text-sm">{renderStars(review.rating)}</span>
