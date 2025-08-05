@@ -62,7 +62,7 @@ const ProductReviews = () => {
     }
   };
 
-  // Product data with Nike Tech Fleece - using reliable product images
+  // Product data with Nike Tech Fleece - using reliable placeholder images
   const products = [
     {
       id: 1,
@@ -70,7 +70,7 @@ const ProductReviews = () => {
       color: 'Black',
       price: '$85.00',
       href: '#',
-      imageSrc: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      imageSrc: 'https://picsum.photos/400/500?random=1',
       imageAlt: 'Nike Tech Fleece Full-Zip Windrunner Hoodie in Black',
       retailer: 'Nike.com',
       rating: 4.4,
@@ -82,7 +82,7 @@ const ProductReviews = () => {
       color: 'Gray Heather',
       price: '$89.99',
       href: '#',
-      imageSrc: 'https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2064&q=80',
+      imageSrc: 'https://picsum.photos/400/500?random=2',
       imageAlt: 'Nike Tech Fleece Full-Zip Windrunner Hoodie in Gray Heather',
       retailer: "Dick's Sporting Goods",
       rating: 4.2,
@@ -94,7 +94,7 @@ const ProductReviews = () => {
       color: 'Navy',
       price: '$92.50',
       href: '#',
-      imageSrc: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80',
+      imageSrc: 'https://picsum.photos/400/500?random=3',
       imageAlt: 'Nike Tech Fleece Full-Zip Windrunner Hoodie in Navy',
       retailer: 'Amazon',
       rating: 4.0,
@@ -106,7 +106,7 @@ const ProductReviews = () => {
       color: 'White',
       price: '$87.99',
       href: '#',
-      imageSrc: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      imageSrc: 'https://picsum.photos/400/500?random=4',
       imageAlt: 'Nike Tech Fleece Full-Zip Windrunner Hoodie in White',
       retailer: 'Foot Locker',
       rating: 4.1,
@@ -118,7 +118,7 @@ const ProductReviews = () => {
       color: 'Red',
       price: '$90.00',
       href: '#',
-      imageSrc: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      imageSrc: 'https://picsum.photos/400/500?random=5',
       imageAlt: 'Nike Tech Fleece Full-Zip Windrunner Hoodie in Red',
       retailer: 'Nike.com',
       rating: 4.3,
@@ -130,7 +130,7 @@ const ProductReviews = () => {
       color: 'Olive',
       price: '$88.50',
       href: '#',
-      imageSrc: 'https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2064&q=80',
+      imageSrc: 'https://picsum.photos/400/500?random=6',
       imageAlt: 'Nike Tech Fleece Full-Zip Windrunner Hoodie in Olive',
       retailer: 'Amazon',
       rating: 4.1,
