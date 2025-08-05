@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import './ProductReviews.css';
 
+// Updated ProductReviews component with Nike Tech Fleece data
 const ProductReviews = () => {
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -62,6 +62,58 @@ const ProductReviews = () => {
     }
   };
 
+  // Product data with Nike Tech Fleece
+  const products = [
+    {
+      id: 1,
+      name: 'Nike Tech Fleece Full-Zip Windrunner Hoodie',
+      color: 'Black',
+      price: '$85.00',
+      href: '#',
+      imageSrc: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      imageAlt: 'Nike Tech Fleece hoodie in black',
+      retailer: 'Nike.com',
+      rating: 4.4,
+      reviewCount: 89,
+    },
+    {
+      id: 2,
+      name: 'Nike Tech Fleece Full-Zip Windrunner Hoodie',
+      color: 'Gray',
+      price: '$89.99',
+      href: '#',
+      imageSrc: 'https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2064&q=80',
+      imageAlt: 'Nike Tech Fleece hoodie in gray',
+      retailer: "Dick's Sporting Goods",
+      rating: 4.2,
+      reviewCount: 156,
+    },
+    {
+      id: 3,
+      name: 'Nike Tech Fleece Full-Zip Windrunner Hoodie',
+      color: 'Navy',
+      price: '$92.50',
+      href: '#',
+      imageSrc: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80',
+      imageAlt: 'Nike Tech Fleece hoodie in navy',
+      retailer: 'Amazon',
+      rating: 4.0,
+      reviewCount: 234,
+    },
+    {
+      id: 4,
+      name: 'Nike Tech Fleece Full-Zip Windrunner Hoodie',
+      color: 'White',
+      price: '$87.99',
+      href: '#',
+      imageSrc: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      imageAlt: 'Nike Tech Fleece hoodie in white',
+      retailer: 'Foot Locker',
+      rating: 4.1,
+      reviewCount: 67,
+    },
+  ];
+
   useEffect(() => {
     // Simulate API call
     setTimeout(() => {
@@ -94,90 +146,145 @@ const ProductReviews = () => {
 
   if (loading) {
     return (
-      <div className="loading">
-        <div className="spinner"></div>
-        <p>Aggregating reviews from multiple sources...</p>
+      <div className="flex flex-col items-center justify-center min-h-96 text-center">
+        <div className="w-12 h-12 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin mb-4"></div>
+        <p className="text-gray-600">Aggregating reviews from multiple sources...</p>
       </div>
     );
   }
 
   return (
-    <div className="product-reviews">
-      <div className="product-header">
-        <div className="product-info">
-          <h1>Nike Tech Fleece Full-Zip Windrunner Hoodie</h1>
-          <div className="product-meta">
-            <div className="overall-rating">
-              <span className="stars">{renderStars(getOverallRating())}</span>
-              <span className="rating-text">{getOverallRating()} out of 5</span>
-              <span className="review-count">({getTotalReviews()} total reviews)</span>
+    <div className="bg-white">
+      <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+        {/* Product Overview Header */}
+        <div className="mb-12">
+          <div className="md:flex md:items-center md:justify-between">
+            <div>
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900">Nike Tech Fleece Collection</h2>
+              <div className="mt-2 flex items-center space-x-4">
+                <span className="text-yellow-400 text-lg">{renderStars(getOverallRating())}</span>
+                <span className="text-lg font-semibold text-gray-900">{getOverallRating()} out of 5</span>
+                <span className="text-gray-500">({getTotalReviews()} total reviews)</span>
+                <span className="text-green-600 font-bold">From ${getLowestPrice()}</span>
+              </div>
             </div>
-            <div className="price-info">
-              <span className="lowest-price">From ${getLowestPrice()}</span>
+            <div className="mt-4 md:mt-0">
+              <select 
+                value={selectedSource} 
+                onChange={(e) => setSelectedSource(e.target.value)}
+                className="border border-gray-300 rounded-md px-3 py-2 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              >
+                <option value="all">All Retailers</option>
+                {Object.entries(reviews).map(([key, source]) => (
+                  <option key={key} value={key}>{source.name}</option>
+                ))}
+              </select>
             </div>
           </div>
         </div>
-      </div>
 
-      <div className="source-filter">
-        <label>Filter by source:</label>
-        <select value={selectedSource} onChange={(e) => setSelectedSource(e.target.value)}>
-          <option value="all">All Sources</option>
-          {Object.entries(reviews).map(([key, source]) => (
-            <option key={key} value={key}>{source.name}</option>
-          ))}
-        </select>
-      </div>
-
-      <div className="sources-grid">
-        {filteredReviews.map(([key, source]) => (
-          <div key={key} className="source-card">
-            <div className="source-header">
-              <div className="source-info">
-                <span className="source-logo">{source.logo}</span>
-                <h3>{source.name}</h3>
+        {/* Product Grid */}
+        <div className="mt-6 grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-4 md:gap-y-0 lg:gap-x-8">
+          {products.map((product) => (
+            <div key={product.id} className="group relative">
+              <div className="h-56 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:h-72 xl:h-80">
+                <img alt={product.imageAlt} src={product.imageSrc} className="size-full object-cover" />
               </div>
-              <div className="source-rating">
-                <span className="stars">{renderStars(source.rating)}</span>
-                <span className="rating">{source.rating}</span>
-                <span className="review-count">({source.reviewCount} reviews)</span>
-              </div>
-            </div>
-            
-            <div className="source-details">
-              <div className="price-availability">
-                <span className="price">{source.price}</span>
-                <span className={`availability ${source.availability.toLowerCase().includes('stock') ? 'in-stock' : 'limited'}`}>
-                  {source.availability}
-                </span>
-              </div>
-            </div>
-
-            <div className="reviews-list">
-              {source.reviews.map((review, index) => (
-                <div key={index} className="review-item">
-                  <div className="review-header">
-                    <span className="stars">{renderStars(review.rating)}</span>
-                    <span className="author">{review.author}</span>
-                    <span className="date">{review.date}</span>
-                  </div>
-                  <p className="review-text">{review.text}</p>
+              <h3 className="mt-4 text-sm text-gray-700">
+                <a href={product.href}>
+                  <span className="absolute inset-0" />
+                  {product.name}
+                </a>
+              </h3>
+              <p className="mt-1 text-sm text-gray-500">{product.color}</p>
+              <div className="mt-1 flex items-center justify-between">
+                <p className="text-sm font-medium text-gray-900">{product.price}</p>
+                <div className="flex items-center space-x-1">
+                  <span className="text-yellow-400 text-xs">{renderStars(product.rating)}</span>
+                  <span className="text-xs text-gray-500">({product.reviewCount})</span>
                 </div>
-              ))}
+              </div>
+              <p className="mt-1 text-xs text-blue-600 font-medium">{product.retailer}</p>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
 
-      <div className="aggregation-info">
-        <h3>Data Aggregation Info</h3>
-        <p>This data is compiled from multiple retail sources to provide you with comprehensive product insights.</p>
-        <ul>
-          <li>Real-time price comparison</li>
-          <li>Aggregated customer reviews</li>
-          <li>Stock availability tracking</li>
-          <li>Overall rating calculation</li>
-        </ul>
+        {/* Reviews Section */}
+        <div className="mt-16">
+          <h3 className="text-2xl font-bold tracking-tight text-gray-900 mb-8">Customer Reviews by Retailer</h3>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {filteredReviews.map(([key, source]) => (
+              <div key={key} className="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
+                <div className="bg-gray-50 px-6 py-4 border-b border-gray-200">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center text-lg">
+                        {source.logo}
+                      </div>
+                      <h4 className="text-lg font-semibold text-gray-900">{source.name}</h4>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <span className="text-yellow-400">{renderStars(source.rating)}</span>
+                      <span className="font-semibold text-gray-900">{source.rating}</span>
+                      <span className="text-sm text-gray-500">({source.reviewCount} reviews)</span>
+                    </div>
+                  </div>
+                  
+                  <div className="flex justify-between items-center">
+                    <span className="text-xl font-bold text-green-600">{source.price}</span>
+                    <span className={`px-3 py-1 rounded-full text-xs font-semibold uppercase ${
+                      source.availability.toLowerCase().includes('stock') 
+                        ? 'bg-green-100 text-green-800' 
+                        : 'bg-yellow-100 text-yellow-800'
+                    }`}>
+                      {source.availability}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="p-6">
+                  {source.reviews.map((review, index) => (
+                    <div key={index} className="border-b border-gray-100 last:border-b-0 py-4 last:pb-0">
+                      <div className="flex items-center space-x-4 mb-2">
+                        <span className="text-yellow-400 text-sm">{renderStars(review.rating)}</span>
+                        <span className="font-semibold text-gray-900 text-sm">{review.author}</span>
+                        <span className="text-gray-500 text-sm">{review.date}</span>
+                      </div>
+                      <p className="text-gray-700 text-sm leading-relaxed">{review.text}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Aggregation Info */}
+        <div className="mt-12 bg-gray-50 rounded-lg p-8 border-l-4 border-blue-500">
+          <h3 className="text-xl font-semibold text-gray-900 mb-4">Data Aggregation Info</h3>
+          <p className="text-gray-600 mb-4 leading-relaxed">
+            This data is compiled from multiple retail sources to provide you with comprehensive product insights.
+          </p>
+          <ul className="space-y-2">
+            <li className="flex items-center text-gray-700">
+              <span className="text-green-500 mr-3">✓</span>
+              Real-time price comparison
+            </li>
+            <li className="flex items-center text-gray-700">
+              <span className="text-green-500 mr-3">✓</span>
+              Aggregated customer reviews
+            </li>
+            <li className="flex items-center text-gray-700">
+              <span className="text-green-500 mr-3">✓</span>
+              Stock availability tracking
+            </li>
+            <li className="flex items-center text-gray-700">
+              <span className="text-green-500 mr-3">✓</span>
+              Overall rating calculation
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );

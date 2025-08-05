@@ -8,18 +8,14 @@
     "server": "nodemon server.js",
     "client": "cd client && npm start",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "dev:client": "cd client && npm start",
+    "dev:server": "nodemon server.js",
     "build": "cd client && npm run build",
     "install-client": "cd client && npm install",
     "heroku-postbuild": "npm run install-client && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "react",
-    "express",
-    "node",
-    "full-stack",
-    "web"
-  ],
+  "keywords": ["react", "express", "node", "full-stack", "web"],
   "author": "",
   "license": "MIT",
   "dependencies": {
@@ -27,7 +23,7 @@
     "path": "^0.12.7"
   },
   "devDependencies": {
-    "concurrently": "^8.2.2",
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "concurrently": "^8.2.2"
   }
 }
