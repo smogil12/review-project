@@ -11,172 +11,173 @@ const getImageUrl = (imagePath) => {
 
 // Updated ProductReviews component with Nike Tech Fleece data
 const ProductReviews = () => {
-  const [reviews, setReviews] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [selectedSource, setSelectedSource] = useState('all');
 
-  // Mock data for demonstration
-  const mockReviews = {
-    'dicks-sporting-goods': {
-      name: "Dick's Sporting Goods",
-      logo: "🏪",
-      rating: 4.2,
-      reviewCount: 156,
-      price: "$89.99",
-      availability: "In Stock",
-      storeUrl: "https://www.dickssportinggoods.com/c/mens-clothing-mens-jackets-hoodies",
-      reviews: [
-        { rating: 5, text: "Perfect fit and very comfortable. Great for cold weather.", author: "John D.", date: "2024-01-15" },
-        { rating: 4, text: "Good quality but runs a bit small. Size up if in between sizes.", author: "Sarah M.", date: "2024-01-10" },
-        { rating: 5, text: "Love the material and warmth. Worth the price.", author: "Mike R.", date: "2024-01-08" }
-      ]
-    },
-    'nike-com': {
-      name: "Nike.com",
-      logo: "✓",
-      rating: 4.4,
-      reviewCount: 89,
-      price: "$85.00",
-      availability: "In Stock",
-      storeUrl: "https://www.nike.com/w/mens-tech-fleece-1gdj0",
-      reviews: [
-        { rating: 5, text: "Excellent quality and fit. Perfect for running in cold weather.", author: "Alex K.", date: "2024-01-14" },
-        { rating: 4, text: "Great hoodie, very warm and comfortable.", author: "Lisa T.", date: "2024-01-12" },
-        { rating: 5, text: "Best tech fleece I've owned. Highly recommend.", author: "David P.", date: "2024-01-05" }
-      ]
-    },
-    'amazon': {
-      name: "Amazon",
-      logo: "📦",
-      rating: 4.0,
-      reviewCount: 234,
-      price: "$92.50",
-      availability: "In Stock",
-      storeUrl: "https://www.amazon.com/s?k=nike+tech+fleece+hoodie",
-      reviews: [
-        { rating: 4, text: "Good quality but expensive. Fits as expected.", author: "Robert L.", date: "2024-01-13" },
-        { rating: 3, text: "Nice material but the zipper is a bit stiff.", author: "Emma W.", date: "2024-01-11" },
-        { rating: 5, text: "Perfect for my needs. Great customer service too.", author: "Chris H.", date: "2024-01-09" }
-      ]
-    },
-    'footlocker': {
-      name: "Foot Locker",
-      logo: "👟",
-      rating: 4.1,
-      reviewCount: 67,
-      price: "$87.99",
-      availability: "Limited Stock",
-      storeUrl: "https://www.footlocker.com/category/mens/clothing/hoodies-sweatshirts.html",
-      reviews: [
-        { rating: 4, text: "Solid hoodie, good for everyday wear.", author: "Jennifer B.", date: "2024-01-12" },
-        { rating: 5, text: "Love the fit and style. Great purchase.", author: "Tom G.", date: "2024-01-08" },
-        { rating: 4, text: "Good quality, runs true to size.", author: "Rachel M.", date: "2024-01-06" }
-      ]
-    }
-  };
-
-  // Product data with Nike Tech Fleece - using local downloaded images
+  // Product data with multiple products
   const products = [
     {
       id: 1,
       name: 'Nike Tech Fleece Full-Zip Windrunner Hoodie',
-      color: 'Black',
-      price: '$85.00',
-      href: 'https://www.nike.com/t/tech-fleece-full-zip-windrunner-hoodie-2KJgvN/DV0810-010',
+      category: 'Clothing',
       imageSrc: getImageUrl('/images/products/nike-tech-fleece-hoodie.png'),
       fallbackImage: '/api/image-proxy?url=https://picsum.photos/400/500?random=11',
-      imageAlt: 'Nike Tech Fleece Full-Zip Windrunner Hoodie in Black',
-      retailer: 'Nike.com',
-      rating: 4.4,
-      reviewCount: 89,
+      imageAlt: 'Nike Tech Fleece Full-Zip Windrunner Hoodie',
+      reviews: {
+        'dicks-sporting-goods': {
+          name: "Dick's Sporting Goods",
+          logo: "🏪",
+          rating: 4.2,
+          reviewCount: 156,
+          price: "$89.99",
+          availability: "In Stock",
+          storeUrl: "https://www.dickssportinggoods.com/c/mens-clothing-mens-jackets-hoodies",
+          reviews: [
+            { rating: 5, text: "Perfect fit and very comfortable. Great for cold weather.", author: "John D.", date: "2024-01-15" },
+            { rating: 4, text: "Good quality but runs a bit small. Size up if in between sizes.", author: "Sarah M.", date: "2024-01-10" },
+            { rating: 5, text: "Love the material and warmth. Worth the price.", author: "Mike R.", date: "2024-01-08" }
+          ]
+        },
+        'nike-com': {
+          name: "Nike.com",
+          logo: "✓",
+          rating: 4.4,
+          reviewCount: 89,
+          price: "$85.00",
+          availability: "In Stock",
+          storeUrl: "https://www.nike.com/w/mens-tech-fleece-1gdj0",
+          reviews: [
+            { rating: 5, text: "Excellent quality and fit. Perfect for running in cold weather.", author: "Alex K.", date: "2024-01-14" },
+            { rating: 4, text: "Great hoodie, very warm and comfortable.", author: "Lisa T.", date: "2024-01-12" },
+            { rating: 5, text: "Best tech fleece I've owned. Highly recommend.", author: "David P.", date: "2024-01-05" }
+          ]
+        },
+        'amazon': {
+          name: "Amazon",
+          logo: "📦",
+          rating: 4.0,
+          reviewCount: 234,
+          price: "$92.50",
+          availability: "In Stock",
+          storeUrl: "https://www.amazon.com/s?k=nike+tech+fleece+hoodie",
+          reviews: [
+            { rating: 4, text: "Good quality but expensive. Fits as expected.", author: "Robert L.", date: "2024-01-13" },
+            { rating: 3, text: "Nice material but the zipper is a bit stiff.", author: "Emma W.", date: "2024-01-11" },
+            { rating: 5, text: "Perfect for my needs. Great customer service too.", author: "Chris H.", date: "2024-01-09" }
+          ]
+        },
+        'footlocker': {
+          name: "Foot Locker",
+          logo: "👟",
+          rating: 4.1,
+          reviewCount: 67,
+          price: "$87.99",
+          availability: "Limited Stock",
+          storeUrl: "https://www.footlocker.com/category/mens/clothing/hoodies-sweatshirts.html",
+          reviews: [
+            { rating: 4, text: "Solid hoodie, good for everyday wear.", author: "Jennifer B.", date: "2024-01-12" },
+            { rating: 5, text: "Love the fit and style. Great purchase.", author: "Tom G.", date: "2024-01-08" },
+            { rating: 4, text: "Good quality, runs true to size.", author: "Rachel M.", date: "2024-01-06" }
+          ]
+        }
+      }
     },
     {
       id: 2,
-      name: 'Nike Tech Fleece Full-Zip Windrunner Hoodie',
-      color: 'Gray Heather',
-      price: '$89.99',
-      href: 'https://www.dickssportinggoods.com/p/nike-mens-tech-full-zip-windrunner-hoodie-24nikmmnktchflcfznfta/24nikmmnktchflcfznfta',
-      imageSrc: getImageUrl('/images/products/nike-tech-fleece-hoodie.png'),
+      name: 'On Cloud 6 Men\'s Running Shoes',
+      category: 'Footwear',
+      imageSrc: getImageUrl('/images/products/on-cloud-6-shoes.png'),
       fallbackImage: '/api/image-proxy?url=https://picsum.photos/400/500?random=12',
-      imageAlt: 'Nike Tech Fleece Full-Zip Windrunner Hoodie in Gray Heather',
-      retailer: "Dick's Sporting Goods",
-      rating: 4.2,
-      reviewCount: 156,
-    },
-    {
-      id: 3,
-      name: 'Nike Tech Fleece Full-Zip Windrunner Hoodie',
-      color: 'Navy',
-      price: '$92.50',
-      href: 'https://www.amazon.com/Nike-Tech-Fleece-Windrunner-Hoodie/dp/B0BQJ8VXKQ',
-      imageSrc: getImageUrl('/images/products/nike-tech-fleece-hoodie.png'),
-      fallbackImage: '/api/image-proxy?url=https://picsum.photos/400/500?random=13',
-      imageAlt: 'Nike Tech Fleece Full-Zip Windrunner Hoodie in Navy',
-      retailer: 'Amazon',
-      rating: 4.0,
-      reviewCount: 234,
-    },
-    {
-      id: 4,
-      name: 'Nike Tech Fleece Full-Zip Windrunner Hoodie',
-      color: 'White',
-      price: '$87.99',
-      href: 'https://www.footlocker.com/product/nike-tech-fleece-full-zip-windrunner-hoodie-mens/24nikmmnktchflcfznfta.html',
-      imageSrc: getImageUrl('/images/products/nike-tech-fleece-hoodie.png'),
-      fallbackImage: '/api/image-proxy?url=https://picsum.photos/400/500?random=14',
-      imageAlt: 'Nike Tech Fleece Full-Zip Windrunner Hoodie in White',
-      retailer: 'Foot Locker',
-      rating: 4.1,
-      reviewCount: 67,
-    },
-    {
-      id: 5,
-      name: 'Nike Tech Fleece Full-Zip Windrunner Hoodie',
-      color: 'Red',
-      price: '$90.00',
-      href: 'https://www.nike.com/t/tech-fleece-full-zip-windrunner-hoodie-2KJgvN/DV0810-680',
-      imageSrc: getImageUrl('/images/products/nike-tech-fleece-hoodie.png'),
-      fallbackImage: '/api/image-proxy?url=https://picsum.photos/400/500?random=15',
-      imageAlt: 'Nike Tech Fleece Full-Zip Windrunner Hoodie in Red',
-      retailer: 'Nike.com',
-      rating: 4.3,
-      reviewCount: 45,
-    },
-    {
-      id: 6,
-      name: 'Nike Tech Fleece Full-Zip Windrunner Hoodie',
-      color: 'Olive',
-      price: '$88.50',
-      href: 'https://www.amazon.com/Nike-Tech-Fleece-Windrunner-Hoodie/dp/B0BQJ8VXKQ',
-      imageSrc: getImageUrl('/images/products/nike-tech-fleece-hoodie.png'),
-      fallbackImage: '/api/image-proxy?url=https://picsum.photos/400/500?random=16',
-      imageAlt: 'Nike Tech Fleece Full-Zip Windrunner Hoodie in Olive',
-      retailer: 'Amazon',
-      rating: 4.1,
-      reviewCount: 78,
-    },
+      imageAlt: 'On Cloud 6 Men\'s Running Shoes in Glacier White',
+      reviews: {
+        'on-running': {
+          name: "On Running",
+          logo: "🏃",
+          rating: 4.6,
+          reviewCount: 342,
+          price: "$149.99",
+          availability: "In Stock",
+          storeUrl: "https://www.on-running.com/en-us/mens/cloud-6",
+          reviews: [
+            { rating: 5, text: "Incredible comfort and cushioning. Perfect for long runs.", author: "Mark S.", date: "2024-01-16" },
+            { rating: 4, text: "Great shoes, very responsive. Good for both road and trail.", author: "Jessica L.", date: "2024-01-14" },
+            { rating: 5, text: "Best running shoes I've ever owned. Highly recommend!", author: "Carlos M.", date: "2024-01-12" }
+          ]
+        },
+        'amazon': {
+          name: "Amazon",
+          logo: "📦",
+          rating: 4.3,
+          reviewCount: 189,
+          price: "$139.99",
+          availability: "In Stock",
+          storeUrl: "https://www.amazon.com/s?k=on+cloud+6+men",
+          reviews: [
+            { rating: 4, text: "Excellent running shoes with great arch support.", author: "Ryan T.", date: "2024-01-15" },
+            { rating: 5, text: "Perfect fit and amazing comfort for daily runs.", author: "Amanda K.", date: "2024-01-13" },
+            { rating: 4, text: "Great quality, runs true to size.", author: "Daniel P.", date: "2024-01-11" }
+          ]
+        },
+        'dicks-sporting-goods': {
+          name: "Dick's Sporting Goods",
+          logo: "🏪",
+          rating: 4.4,
+          reviewCount: 78,
+          price: "$149.99",
+          availability: "Limited Stock",
+          storeUrl: "https://www.dickssportinggoods.com/c/mens-running-shoes",
+          reviews: [
+            { rating: 5, text: "Outstanding comfort and performance. Great for marathon training.", author: "Lisa R.", date: "2024-01-16" },
+            { rating: 4, text: "Solid running shoes with good cushioning.", author: "Mike J.", date: "2024-01-14" },
+            { rating: 5, text: "Love these shoes! Perfect for my running style.", author: "Sarah W.", date: "2024-01-12" }
+          ]
+        },
+        'footlocker': {
+          name: "Foot Locker",
+          logo: "👟",
+          rating: 4.2,
+          reviewCount: 45,
+          price: "$144.99",
+          availability: "In Stock",
+          storeUrl: "https://www.footlocker.com/category/mens/running-shoes.html",
+          reviews: [
+            { rating: 4, text: "Great running shoes with excellent support.", author: "Tom B.", date: "2024-01-15" },
+            { rating: 5, text: "Amazing comfort and perfect for long distances.", author: "Rachel K.", date: "2024-01-13" },
+            { rating: 4, text: "Good quality and responsive feel.", author: "David L.", date: "2024-01-11" }
+          ]
+        }
+      }
+    }
   ];
 
+  const [loading, setLoading] = useState(true);
+  const [selectedSource, setSelectedSource] = useState('all');
+  const [selectedProduct, setSelectedProduct] = useState(products[0]); // Default to first product
+
   useEffect(() => {
-    // Simulate API call
-    setTimeout(() => {
-      setReviews(mockReviews);
+    // Simulate loading
+    const timer = setTimeout(() => {
       setLoading(false);
     }, 1000);
+
+    return () => clearTimeout(timer);
   }, []);
 
+  // Update selected product when it changes
+  useEffect(() => {
+    setSelectedSource('all'); // Reset filter when product changes
+  }, [selectedProduct]);
+
   const getOverallRating = () => {
-    const ratings = Object.values(reviews).map(source => source.rating);
+    const ratings = Object.values(selectedProduct.reviews).map(source => source.rating);
     return (ratings.reduce((a, b) => a + b, 0) / ratings.length).toFixed(1);
   };
 
   const getTotalReviews = () => {
-    return Object.values(reviews).reduce((total, source) => total + source.reviewCount, 0);
+    return Object.values(selectedProduct.reviews).reduce((total, source) => total + source.reviewCount, 0);
   };
 
   const getLowestPrice = () => {
-    const prices = Object.values(reviews).map(source => parseFloat(source.price.replace('$', '')));
-    return Math.min(...prices);
+    const prices = Object.values(selectedProduct.reviews).map(source => parseFloat(source.price.replace('$', '')));
+    return Math.min(...prices).toFixed(2);
   };
 
   const renderStars = (rating) => {
@@ -184,8 +185,8 @@ const ProductReviews = () => {
   };
 
   const filteredReviews = selectedSource === 'all' 
-    ? Object.entries(reviews)
-    : Object.entries(reviews).filter(([key]) => key === selectedSource);
+    ? Object.entries(selectedProduct.reviews)
+    : Object.entries(selectedProduct.reviews).filter(([key]) => key === selectedSource);
 
   if (loading) {
     return (
@@ -203,7 +204,7 @@ const ProductReviews = () => {
         <div className="mb-12">
           <div className="md:flex md:items-center md:justify-between">
             <div>
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900">Nike Tech Fleece Collection</h2>
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900">{selectedProduct.name}</h2>
               <div className="mt-2 flex items-center space-x-4">
                 <span className="text-yellow-400 text-lg">{renderStars(getOverallRating())}</span>
                 <span className="text-lg font-semibold text-gray-900">{getOverallRating()} out of 5</span>
@@ -218,7 +219,7 @@ const ProductReviews = () => {
                 className="border border-gray-300 rounded-md px-3 py-2 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               >
                 <option value="all">All Retailers</option>
-                {Object.entries(reviews).map(([key, source]) => (
+                {Object.entries(selectedProduct.reviews).map(([key, source]) => (
                   <option key={key} value={key}>{source.name}</option>
                 ))}
               </select>
@@ -227,9 +228,17 @@ const ProductReviews = () => {
         </div>
 
         {/* Product Grid */}
-        <div className="mt-6 grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-4 md:gap-y-0 lg:gap-x-8">
+        <div className="mt-6 grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-2 md:gap-y-0 lg:gap-x-8">
           {products.map((product) => (
-            <div key={product.id} className="group relative">
+            <div 
+              key={product.id} 
+              className={`group relative cursor-pointer border-2 rounded-lg p-4 transition-all ${
+                selectedProduct.id === product.id 
+                  ? 'border-blue-500 bg-blue-50' 
+                  : 'border-gray-200 hover:border-blue-300'
+              }`}
+              onClick={() => setSelectedProduct(product)}
+            >
               <div className="h-56 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:h-72 xl:h-80">
                 <img 
                   alt={product.imageAlt} 
@@ -253,39 +262,19 @@ const ProductReviews = () => {
                 <div className="size-full flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 text-gray-600 text-sm" style={{display: 'none'}}>
                   <div className="text-center p-4">
                     <div className="text-3xl mb-3">🏃‍♂️</div>
-                    <div className="font-semibold text-gray-800 mb-1">Nike Tech Fleece</div>
-                    <div className="text-xs text-gray-500 mb-2">{product.color}</div>
-                    <div className="text-xs text-gray-400">{product.retailer}</div>
+                    <div className="font-semibold text-gray-800 mb-1">{product.name}</div>
+                    <div className="text-xs text-gray-500 mb-2">{product.category}</div>
                   </div>
                 </div>
               </div>
-              <h3 className="mt-4 text-sm text-gray-700">
-                <a href={product.href}>
-                  <span className="absolute inset-0" />
-                  {product.name}
-                </a>
+              <h3 className="mt-4 text-sm text-gray-700 font-semibold">
+                {product.name}
               </h3>
-              <p className="mt-1 text-sm text-gray-500">{product.color}</p>
-              <div className="mt-1 flex items-center justify-between">
-                <p className="text-sm font-medium text-gray-900">{product.price}</p>
-                <div className="flex items-center space-x-1">
-                  <span className="text-yellow-400 text-xs">{renderStars(product.rating)}</span>
-                  <span className="text-xs text-gray-500">({product.reviewCount})</span>
-                </div>
-              </div>
-              <p className="mt-1 text-xs text-blue-600 font-medium">{product.retailer}</p>
+              <p className="mt-1 text-sm text-gray-500">{product.category}</p>
               <div className="mt-2">
-                <a 
-                  href={product.href} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center px-3 py-1 text-xs font-medium text-blue-600 bg-blue-50 border border-blue-200 rounded-md hover:bg-blue-100 transition-colors"
-                >
-                  View on {product.retailer}
-                  <svg className="ml-1 w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </a>
+                <span className="inline-flex items-center px-3 py-1 text-xs font-medium text-blue-600 bg-blue-50 border border-blue-200 rounded-md">
+                  Click to view reviews
+                </span>
               </div>
             </div>
           ))}

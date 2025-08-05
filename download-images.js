@@ -42,9 +42,9 @@ async function downloadImage(url, filename) {
 async function main() {
     console.log('🖼️  Product Image Downloader\n');
     
-    // Example: Download the Nike Tech Fleece image
-    const imageUrl = 'https://static.nike.com/a/images/t_PDP_936_v1/f_auto,q_auto:eco/08906f18-828b-47a0-a461-6d6b59c4c800/M+NK+TCH+FLC+HOODIE.png';
-    const filename = 'nike-tech-fleece-hoodie.png';
+            // Example: Download the On Cloud 6 image
+        const imageUrl = 'https://lukeslocker.com/cdn/shop/files/LukesLockerDallasFortWorth_ON_3MF10070070_Men_sCloud6_Glacier_White_3_1800x.png?v=1738925977';
+        const filename = 'on-cloud-6-shoes.png';
     
     await downloadImage(imageUrl, filename);
     
