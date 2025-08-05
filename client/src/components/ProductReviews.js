@@ -29,7 +29,7 @@ const ProductReviews = () => {
           reviewCount: 156,
           price: "$89.99",
           availability: "In Stock",
-          storeUrl: "https://www.dickssportinggoods.com/c/mens-clothing-mens-jackets-hoodies",
+          storeUrl: "https://www.dickssportinggoods.com/p/nike-mens-tech-full-zip-windrunner-hoodie-24nikmmnktchflcfznfta/24nikmmnktchflcfznfta",
           reviews: [
             { rating: 5, text: "Perfect fit and very comfortable. Great for cold weather.", author: "John D.", date: "2025-08-05" },
             { rating: 4, text: "Good quality but runs a bit small. Size up if in between sizes.", author: "Sarah M.", date: "2025-08-03" },
@@ -103,7 +103,7 @@ const ProductReviews = () => {
           reviewCount: 342,
           price: "$149.99",
           availability: "In Stock",
-          storeUrl: "https://www.on-running.com/en-us/mens/cloud-6",
+          storeUrl: "https://www.on-running.com/en-us/mens/cloud-6/3MF10070070",
           reviews: [
             { rating: 5, text: "Incredible comfort and cushioning. Perfect for long runs.", author: "Mark S.", date: "2025-08-05" },
             { rating: 4, text: "Great shoes, very responsive. Good for both road and trail.", author: "Jessica L.", date: "2025-08-03" },
@@ -119,7 +119,7 @@ const ProductReviews = () => {
           reviewCount: 189,
           price: "$139.99",
           availability: "In Stock",
-          storeUrl: "https://www.amazon.com/s?k=on+cloud+6+men+running+shoes&ref=sr_pg_1",
+          storeUrl: "https://www.amazon.com/Cloud-Running-Shoes-Mens-Glacier/dp/B0BQZ6X8KQ",
           reviews: [
             { rating: 4, text: "Excellent running shoes with great arch support.", author: "Ryan T.", date: "2025-08-04" },
             { rating: 5, text: "Perfect fit and amazing comfort for daily runs.", author: "Amanda K.", date: "2025-08-02" },
@@ -135,7 +135,7 @@ const ProductReviews = () => {
           reviewCount: 78,
           price: "$149.99",
           availability: "Limited Stock",
-          storeUrl: "https://www.dickssportinggoods.com/c/mens-running-shoes",
+          storeUrl: "https://www.dickssportinggoods.com/p/on-cloud-6-mens-running-shoes-23onmu3MF10070070/23onmu3MF10070070",
           reviews: [
             { rating: 5, text: "Outstanding comfort and performance. Great for marathon training.", author: "Lisa R.", date: "2025-08-03" },
             { rating: 4, text: "Solid running shoes with good cushioning.", author: "Mike J.", date: "2025-08-01" },
@@ -151,7 +151,7 @@ const ProductReviews = () => {
           reviewCount: 45,
           price: "$144.99",
           availability: "In Stock",
-          storeUrl: "https://www.footlocker.com/category/mens/running-shoes.html",
+          storeUrl: "https://www.footlocker.com/product/on-cloud-6-mens-running-shoes/3MF10070070.html",
           reviews: [
             { rating: 4, text: "Great running shoes with excellent support.", author: "Tom B.", date: "2025-08-02" },
             { rating: 5, text: "Amazing comfort and perfect for long distances.", author: "Rachel K.", date: "2025-07-30" },
