@@ -1,14 +1,25 @@
 {
   "name": "review-project",
   "version": "1.0.0",
-  "description": "A sample Express.js web application",
+  "description": "A full-stack React and Express application",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server.js",
+    "server": "nodemon server.js",
+    "client": "cd client && npm start",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "cd client && npm run build",
+    "install-client": "cd client && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["express", "node", "web", "server"],
+  "keywords": [
+    "react",
+    "express",
+    "node",
+    "full-stack",
+    "web"
+  ],
   "author": "",
   "license": "MIT",
   "dependencies": {
@@ -16,6 +27,7 @@
     "path": "^0.12.7"
   },
   "devDependencies": {
+    "concurrently": "^8.2.2",
     "nodemon": "^3.0.1"
   }
 }

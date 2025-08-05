@@ -1,59 +1,99 @@
-# Review Project
+# Review Project - React + Express Full-Stack
 
-A sample Express.js web application with a modern HTML structure.
+A modern full-stack web application built with React frontend and Express backend.
 
 ## Features
 
-- Express.js server with static file serving
-- Modern HTML5 semantic structure
-- Responsive CSS design
-- API endpoints for health checks
-- Development mode with auto-reload
-
-## Setup
-
-1. Install dependencies:
-```bash
-npm install
-```
-
-2. Start the development server:
-```bash
-npm run dev
-```
-
-3. Or start the production server:
-```bash
-npm start
-```
-
-## Usage
-
-- **Development**: Run `npm run dev` for auto-reload during development
-- **Production**: Run `npm start` for production server
-- **Health Check**: Visit `/api/health` to check server status
+- **React Frontend**: Modern component-based UI with hooks
+- **Express Backend**: RESTful API with health check endpoints
+- **Full-Stack Integration**: Seamless communication between frontend and backend
+- **Responsive Design**: Mobile-friendly layout with modern CSS
+- **Development Mode**: Hot reloading for both frontend and backend
+- **Production Ready**: Optimized build process for deployment
 
 ## Project Structure
 
 ```
 review-project/
-├── index.html          # Main HTML file
-├── server.js           # Express server
-├── package.json        # Dependencies and scripts
-└── README.md          # This file
+├── client/                 # React frontend
+│   ├── public/            # Static files
+│   ├── src/               # React components
+│   │   ├── App.js         # Main React component
+│   │   ├── App.css        # Styles
+│   │   └── index.js       # React entry point
+│   └── package.json       # React dependencies
+├── server.js              # Express backend server
+├── package.json           # Backend dependencies and scripts
+└── README.md             # This file
 ```
 
-## Available Endpoints
+## Quick Start
 
-- `GET /` - Serves the main HTML page
+### Development Mode (Recommended)
+
+1. Install all dependencies:
+```bash
+npm install
+npm run install-client
+```
+
+2. Start both frontend and backend in development mode:
+```bash
+npm run dev
+```
+
+This will start:
+- React dev server on `http://localhost:3000`
+- Express backend on `http://localhost:3001`
+
+### Production Mode
+
+1. Build the React app:
+```bash
+npm run build
+```
+
+2. Start the production server:
+```bash
+npm start
+```
+
+The app will be available at `http://localhost:3001`
+
+## Available Scripts
+
+- `npm run dev` - Start both frontend and backend in development mode
+- `npm run server` - Start only the Express backend with nodemon
+- `npm run client` - Start only the React frontend
+- `npm run build` - Build the React app for production
+- `npm start` - Start the production server
+
+## API Endpoints
+
 - `GET /api/health` - Health check endpoint
-- Static files are served from the root directory
+- All other routes serve the React app
 
 ## Development
 
-The server runs on `http://localhost:3000` by default. You can change the port by setting the `PORT` environment variable.
+### Frontend (React)
+- Located in `/client` directory
+- Uses modern React hooks (useState, useEffect)
+- Responsive CSS with modern design
+- Real-time server status display
 
-## Dependencies
+### Backend (Express)
+- RESTful API design
+- Static file serving for React build
+- Error handling and logging
+- Health check endpoint
 
-- **express**: Web framework for Node.js
-- **nodemon**: Development dependency for auto-reloading (dev mode only) 
+## Deployment
+
+The app is ready for deployment to platforms like Heroku, Vercel, or any Node.js hosting service. The `heroku-postbuild` script is included for Heroku deployment.
+
+## Technologies Used
+
+- **Frontend**: React, CSS3, HTML5
+- **Backend**: Node.js, Express.js
+- **Development**: Nodemon, Concurrently
+- **Build Tools**: Create React App 
