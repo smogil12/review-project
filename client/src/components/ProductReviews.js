@@ -62,14 +62,14 @@ const ProductReviews = () => {
     }
   };
 
-  // Product data with Nike Tech Fleece - using reliable placeholder images
+  // Product data with Nike Tech Fleece - using reliable placeholder images and real product URLs
   const products = [
     {
       id: 1,
       name: 'Nike Tech Fleece Full-Zip Windrunner Hoodie',
       color: 'Black',
       price: '$85.00',
-      href: '#',
+      href: 'https://www.nike.com/t/tech-fleece-full-zip-windrunner-hoodie-2KJgvN/DV0810-010',
       imageSrc: 'https://picsum.photos/400/500?random=1',
       imageAlt: 'Nike Tech Fleece Full-Zip Windrunner Hoodie in Black',
       retailer: 'Nike.com',
@@ -81,7 +81,7 @@ const ProductReviews = () => {
       name: 'Nike Tech Fleece Full-Zip Windrunner Hoodie',
       color: 'Gray Heather',
       price: '$89.99',
-      href: '#',
+      href: 'https://www.dickssportinggoods.com/p/nike-mens-tech-full-zip-windrunner-hoodie-24nikmmnktchflcfznfta/24nikmmnktchflcfznfta',
       imageSrc: 'https://picsum.photos/400/500?random=2',
       imageAlt: 'Nike Tech Fleece Full-Zip Windrunner Hoodie in Gray Heather',
       retailer: "Dick's Sporting Goods",
@@ -93,7 +93,7 @@ const ProductReviews = () => {
       name: 'Nike Tech Fleece Full-Zip Windrunner Hoodie',
       color: 'Navy',
       price: '$92.50',
-      href: '#',
+      href: 'https://www.amazon.com/Nike-Tech-Fleece-Windrunner-Hoodie/dp/B0BQJ8VXKQ',
       imageSrc: 'https://picsum.photos/400/500?random=3',
       imageAlt: 'Nike Tech Fleece Full-Zip Windrunner Hoodie in Navy',
       retailer: 'Amazon',
@@ -105,7 +105,7 @@ const ProductReviews = () => {
       name: 'Nike Tech Fleece Full-Zip Windrunner Hoodie',
       color: 'White',
       price: '$87.99',
-      href: '#',
+      href: 'https://www.footlocker.com/product/nike-tech-fleece-full-zip-windrunner-hoodie-mens/24nikmmnktchflcfznfta.html',
       imageSrc: 'https://picsum.photos/400/500?random=4',
       imageAlt: 'Nike Tech Fleece Full-Zip Windrunner Hoodie in White',
       retailer: 'Foot Locker',
@@ -117,7 +117,7 @@ const ProductReviews = () => {
       name: 'Nike Tech Fleece Full-Zip Windrunner Hoodie',
       color: 'Red',
       price: '$90.00',
-      href: '#',
+      href: 'https://www.nike.com/t/tech-fleece-full-zip-windrunner-hoodie-2KJgvN/DV0810-680',
       imageSrc: 'https://picsum.photos/400/500?random=5',
       imageAlt: 'Nike Tech Fleece Full-Zip Windrunner Hoodie in Red',
       retailer: 'Nike.com',
@@ -129,7 +129,7 @@ const ProductReviews = () => {
       name: 'Nike Tech Fleece Full-Zip Windrunner Hoodie',
       color: 'Olive',
       price: '$88.50',
-      href: '#',
+      href: 'https://www.amazon.com/Nike-Tech-Fleece-Windrunner-Hoodie/dp/B0BQJ8VXKQ',
       imageSrc: 'https://picsum.photos/400/500?random=6',
       imageAlt: 'Nike Tech Fleece Full-Zip Windrunner Hoodie in Olive',
       retailer: 'Amazon',
@@ -229,6 +229,19 @@ const ProductReviews = () => {
                 </div>
               </div>
               <p className="mt-1 text-xs text-blue-600 font-medium">{product.retailer}</p>
+              <div className="mt-2">
+                <a 
+                  href={product.href} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-3 py-1 text-xs font-medium text-blue-600 bg-blue-50 border border-blue-200 rounded-md hover:bg-blue-100 transition-colors"
+                >
+                  View on {product.retailer}
+                  <svg className="ml-1 w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+              </div>
             </div>
           ))}
         </div>
