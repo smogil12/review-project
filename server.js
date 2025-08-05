@@ -9,6 +9,9 @@ const PORT = process.env.PORT || 3001; // Backend on 3001, React dev server on 3
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Serve static files from public directory (for downloaded images)
+app.use('/images', express.static(path.join(__dirname, 'public/images')));
+
 // Serve static files from React build directory
 app.use(express.static(path.join(__dirname, 'client/build')));
 

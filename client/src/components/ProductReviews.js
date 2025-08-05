@@ -62,7 +62,7 @@ const ProductReviews = () => {
     }
   };
 
-  // Product data with Nike Tech Fleece - using reliable image sources with fallbacks
+  // Product data with Nike Tech Fleece - using local downloaded images
   const products = [
     {
       id: 1,
@@ -70,7 +70,8 @@ const ProductReviews = () => {
       color: 'Black',
       price: '$85.00',
       href: 'https://www.nike.com/t/tech-fleece-full-zip-windrunner-hoodie-2KJgvN/DV0810-010',
-      imageSrc: '/api/image-proxy?url=https://picsum.photos/400/500?random=1',
+      imageSrc: '/images/products/nike-tech-fleece-hoodie.png',
+      fallbackImage: '/api/image-proxy?url=https://picsum.photos/400/500?random=11',
       imageAlt: 'Nike Tech Fleece Full-Zip Windrunner Hoodie in Black',
       retailer: 'Nike.com',
       rating: 4.4,
@@ -82,7 +83,8 @@ const ProductReviews = () => {
       color: 'Gray Heather',
       price: '$89.99',
       href: 'https://www.dickssportinggoods.com/p/nike-mens-tech-full-zip-windrunner-hoodie-24nikmmnktchflcfznfta/24nikmmnktchflcfznfta',
-      imageSrc: '/api/image-proxy?url=https://picsum.photos/400/500?random=2',
+      imageSrc: '/images/products/nike-tech-fleece-hoodie.png',
+      fallbackImage: '/api/image-proxy?url=https://picsum.photos/400/500?random=12',
       imageAlt: 'Nike Tech Fleece Full-Zip Windrunner Hoodie in Gray Heather',
       retailer: "Dick's Sporting Goods",
       rating: 4.2,
@@ -94,7 +96,8 @@ const ProductReviews = () => {
       color: 'Navy',
       price: '$92.50',
       href: 'https://www.amazon.com/Nike-Tech-Fleece-Windrunner-Hoodie/dp/B0BQJ8VXKQ',
-      imageSrc: '/api/image-proxy?url=https://picsum.photos/400/500?random=3',
+      imageSrc: '/images/products/nike-tech-fleece-hoodie.png',
+      fallbackImage: '/api/image-proxy?url=https://picsum.photos/400/500?random=13',
       imageAlt: 'Nike Tech Fleece Full-Zip Windrunner Hoodie in Navy',
       retailer: 'Amazon',
       rating: 4.0,
@@ -106,7 +109,8 @@ const ProductReviews = () => {
       color: 'White',
       price: '$87.99',
       href: 'https://www.footlocker.com/product/nike-tech-fleece-full-zip-windrunner-hoodie-mens/24nikmmnktchflcfznfta.html',
-      imageSrc: '/api/image-proxy?url=https://picsum.photos/400/500?random=4',
+      imageSrc: '/images/products/nike-tech-fleece-hoodie.png',
+      fallbackImage: '/api/image-proxy?url=https://picsum.photos/400/500?random=14',
       imageAlt: 'Nike Tech Fleece Full-Zip Windrunner Hoodie in White',
       retailer: 'Foot Locker',
       rating: 4.1,
@@ -118,7 +122,8 @@ const ProductReviews = () => {
       color: 'Red',
       price: '$90.00',
       href: 'https://www.nike.com/t/tech-fleece-full-zip-windrunner-hoodie-2KJgvN/DV0810-680',
-      imageSrc: '/api/image-proxy?url=https://picsum.photos/400/500?random=5',
+      imageSrc: '/images/products/nike-tech-fleece-hoodie.png',
+      fallbackImage: '/api/image-proxy?url=https://picsum.photos/400/500?random=15',
       imageAlt: 'Nike Tech Fleece Full-Zip Windrunner Hoodie in Red',
       retailer: 'Nike.com',
       rating: 4.3,
@@ -130,7 +135,8 @@ const ProductReviews = () => {
       color: 'Olive',
       price: '$88.50',
       href: 'https://www.amazon.com/Nike-Tech-Fleece-Windrunner-Hoodie/dp/B0BQJ8VXKQ',
-      imageSrc: '/api/image-proxy?url=https://picsum.photos/400/500?random=6',
+      imageSrc: '/images/products/nike-tech-fleece-hoodie.png',
+      fallbackImage: '/api/image-proxy?url=https://picsum.photos/400/500?random=16',
       imageAlt: 'Nike Tech Fleece Full-Zip Windrunner Hoodie in Olive',
       retailer: 'Amazon',
       rating: 4.1,
@@ -217,16 +223,26 @@ const ProductReviews = () => {
                   src={product.imageSrc} 
                   className="size-full object-cover"
                   onError={(e) => {
-                    console.log('Image failed to load:', product.imageSrc);
-                    e.target.style.display = 'none';
-                    e.target.nextSibling.style.display = 'flex';
+                    console.log('Primary image failed to load:', product.imageSrc);
+                    if (product.fallbackImage) {
+                      e.target.src = product.fallbackImage;
+                      e.target.onerror = (fallbackError) => {
+                        console.log('Fallback image also failed to load:', product.fallbackImage);
+                        fallbackError.target.style.display = 'none';
+                        fallbackError.target.nextSibling.style.display = 'flex';
+                      };
+                    } else {
+                      e.target.style.display = 'none';
+                      e.target.nextSibling.style.display = 'flex';
+                    }
                   }}
                 />
-                <div className="size-full flex items-center justify-center bg-gray-100 text-gray-500 text-sm" style={{display: 'none'}}>
-                  <div className="text-center">
-                    <div className="text-2xl mb-2">🏃‍♂️</div>
-                    <div>Nike Tech Fleece</div>
-                    <div className="text-xs">{product.color}</div>
+                <div className="size-full flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 text-gray-600 text-sm" style={{display: 'none'}}>
+                  <div className="text-center p-4">
+                    <div className="text-3xl mb-3">🏃‍♂️</div>
+                    <div className="font-semibold text-gray-800 mb-1">Nike Tech Fleece</div>
+                    <div className="text-xs text-gray-500 mb-2">{product.color}</div>
+                    <div className="text-xs text-gray-400">{product.retailer}</div>
                   </div>
                 </div>
               </div>
