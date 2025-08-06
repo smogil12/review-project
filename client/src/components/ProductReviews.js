@@ -22,22 +22,6 @@ const ProductReviews = () => {
       fallbackImage: '/api/image-proxy?url=https://picsum.photos/400/500?random=11',
       imageAlt: 'Nike Tech Fleece Full-Zip Windrunner Hoodie',
       reviews: {
-        'dicks-sporting-goods': {
-          name: "Dick's Sporting Goods",
-          logo: "🏪",
-          rating: 4.2,
-          reviewCount: 156,
-          price: "$89.99",
-          availability: "In Stock",
-          storeUrl: "https://www.dickssportinggoods.com/p/nike-mens-tech-full-zip-windrunner-hoodie-24nikmmnktchflcfznfta/24nikmmnktchflcfznfta",
-          reviews: [
-            { rating: 5, text: "Perfect fit and very comfortable. Great for cold weather.", author: "John D.", date: "2025-08-05" },
-            { rating: 4, text: "Good quality but runs a bit small. Size up if in between sizes.", author: "Sarah M.", date: "2025-08-03" },
-            { rating: 5, text: "Love the material and warmth. Worth the price.", author: "Mike R.", date: "2025-08-01" },
-            { rating: 4, text: "Great for workouts and casual wear. Highly recommend!", author: "Jessica L.", date: "2025-07-28" },
-            { rating: 5, text: "Best hoodie I've ever owned. Perfect for running.", author: "Carlos M.", date: "2025-07-25" }
-          ]
-        },
         'nike-com': {
           name: "Nike.com",
           logo: "✓",
@@ -54,36 +38,36 @@ const ProductReviews = () => {
             { rating: 5, text: "Amazing comfort and style. Worth every penny.", author: "Amanda K.", date: "2025-07-24" }
           ]
         },
-        'amazon': {
-          name: "Amazon",
-          logo: "📦",
-          rating: 4.0,
-          reviewCount: 234,
-          price: "$92.50",
+        'scheels': {
+          name: "Scheels",
+          logo: "🏪",
+          rating: 4.2,
+          reviewCount: 89,
+          price: "$89.99",
           availability: "In Stock",
-          storeUrl: "https://www.amazon.com/s?k=nike+tech+fleece+hoodie+men&ref=sr_pg_1",
-          reviews: [
-            { rating: 4, text: "Good quality but expensive. Fits as expected.", author: "Robert L.", date: "2025-08-03" },
-            { rating: 3, text: "Nice material but the zipper is a bit stiff.", author: "Emma W.", date: "2025-08-01" },
-            { rating: 5, text: "Perfect for my needs. Great customer service too.", author: "Chris H.", date: "2025-07-29" },
-            { rating: 4, text: "Solid purchase. Good for everyday use.", author: "Daniel P.", date: "2025-07-26" },
-            { rating: 5, text: "Love this hoodie! Perfect fit and great quality.", author: "Maria G.", date: "2025-07-23" }
-          ]
-        },
-        'footlocker': {
-          name: "Foot Locker",
-          logo: "👟",
-          rating: 4.1,
-          reviewCount: 67,
-          price: "$87.99",
-          availability: "Limited Stock",
-          storeUrl: "https://www.footlocker.com/category/mens/clothing/hoodies-sweatshirts.html",
+          storeUrl: "https://www.scheels.com/c/mens-clothing/mens-jackets-hoodies",
           reviews: [
             { rating: 4, text: "Solid hoodie, good for everyday wear.", author: "Jennifer B.", date: "2025-08-02" },
             { rating: 5, text: "Love the fit and style. Great purchase.", author: "Tom G.", date: "2025-07-30" },
             { rating: 4, text: "Good quality, runs true to size.", author: "Rachel M.", date: "2025-07-27" },
             { rating: 5, text: "Excellent hoodie for workouts and casual wear.", author: "Mark T.", date: "2025-07-25" },
             { rating: 4, text: "Great value for money. Highly recommend!", author: "Sophie L.", date: "2025-07-22" }
+          ]
+        },
+        'walmart': {
+          name: "Walmart",
+          logo: "🏪",
+          rating: 3.9,
+          reviewCount: 156,
+          price: "$74.99",
+          availability: "In Stock",
+          storeUrl: "https://www.walmart.com/ip/Nike-Mens-Tech-Fleece-Hoodie",
+          reviews: [
+            { rating: 4, text: "Good value for money. Decent quality.", author: "John D.", date: "2025-08-02" },
+            { rating: 3, text: "Basic hoodie but gets the job done.", author: "Lisa T.", date: "2025-07-30" },
+            { rating: 4, text: "Affordable and comfortable.", author: "Robert K.", date: "2025-07-27" },
+            { rating: 5, text: "Great price for a good hoodie.", author: "Maria G.", date: "2025-07-24" },
+            { rating: 4, text: "Good for everyday wear.", author: "Tom B.", date: "2025-07-21" }
           ]
         }
       }
@@ -96,6 +80,22 @@ const ProductReviews = () => {
       fallbackImage: '/api/image-proxy?url=https://picsum.photos/400/500?random=12',
       imageAlt: 'On Cloud 6 Men\'s Running Shoes in Glacier White',
       reviews: {
+        'scheels': {
+          name: "Scheels",
+          logo: "🏪",
+          rating: 4.8,
+          reviewCount: 25,
+          price: "$159.99",
+          availability: "In Stock",
+          storeUrl: "https://www.scheels.com/p/44100003018/",
+          reviews: [
+            { rating: 4, text: "Great running shoes with excellent support.", author: "Tom B.", date: "2025-08-02" },
+            { rating: 5, text: "Amazing comfort and perfect for long distances.", author: "Rachel K.", date: "2025-07-30" },
+            { rating: 4, text: "Good quality and responsive feel.", author: "David L.", date: "2025-07-27" },
+            { rating: 5, text: "Perfect for my daily runs. Great cushioning.", author: "Jennifer M.", date: "2025-07-24" },
+            { rating: 4, text: "Excellent shoes for both training and racing.", author: "Brian T.", date: "2025-07-21" }
+          ]
+        },
         'on-running': {
           name: "On Running",
           logo: "🏃",
@@ -112,46 +112,14 @@ const ProductReviews = () => {
             { rating: 5, text: "Perfect fit and amazing comfort for daily runs.", author: "Alex T.", date: "2025-07-26" }
           ]
         },
-        'amazon': {
-          name: "Amazon",
-          logo: "📦",
-          rating: 4.3,
-          reviewCount: 189,
-          price: "$139.99",
-          availability: "In Stock",
-          storeUrl: "https://www.amazon.com/Cloud-Running-Shoes-Mens-Glacier/dp/B0BQZ6X8KQ",
-          reviews: [
-            { rating: 4, text: "Excellent running shoes with great arch support.", author: "Ryan T.", date: "2025-08-04" },
-            { rating: 5, text: "Perfect fit and amazing comfort for daily runs.", author: "Amanda K.", date: "2025-08-02" },
-            { rating: 4, text: "Great quality, runs true to size.", author: "Daniel P.", date: "2025-07-30" },
-            { rating: 5, text: "Love these shoes! Perfect for my running style.", author: "Maria G.", date: "2025-07-27" },
-            { rating: 4, text: "Solid purchase. Great for both training and racing.", author: "Chris L.", date: "2025-07-24" }
-          ]
-        },
-        'dicks-sporting-goods': {
-          name: "Dick's Sporting Goods",
-          logo: "🏪",
-          rating: 4.4,
-          reviewCount: 78,
-          price: "$149.99",
-          availability: "Limited Stock",
-          storeUrl: "https://www.dickssportinggoods.com/p/on-cloud-6-mens-running-shoes-23onmu3MF10070070/23onmu3MF10070070",
-          reviews: [
-            { rating: 5, text: "Outstanding comfort and performance. Great for marathon training.", author: "Lisa R.", date: "2025-08-03" },
-            { rating: 4, text: "Solid running shoes with good cushioning.", author: "Mike J.", date: "2025-08-01" },
-            { rating: 5, text: "Love these shoes! Perfect for my running style.", author: "Sarah W.", date: "2025-07-28" },
-            { rating: 4, text: "Great for long distance runs. Excellent support.", author: "Kevin M.", date: "2025-07-25" },
-            { rating: 5, text: "Best running shoes I've ever worn. Highly recommend!", author: "Sophie K.", date: "2025-07-22" }
-          ]
-        },
         'footlocker': {
           name: "Foot Locker",
           logo: "👟",
           rating: 4.2,
-          reviewCount: 45,
+          reviewCount: 89,
           price: "$144.99",
           availability: "In Stock",
-          storeUrl: "https://www.footlocker.com/product/on-cloud-6-mens-running-shoes/3MF10070070.html",
+          storeUrl: "https://www.footlocker.com/category/mens",
           reviews: [
             { rating: 4, text: "Great running shoes with excellent support.", author: "Tom B.", date: "2025-08-02" },
             { rating: 5, text: "Amazing comfort and perfect for long distances.", author: "Rachel K.", date: "2025-07-30" },
