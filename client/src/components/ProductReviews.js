@@ -9,10 +9,10 @@ const getImageUrl = (imagePath) => {
   }
 };
 
-// Updated ProductReviews component with Nike Tech Fleece data
+// Updated ProductReviews component with expanded product catalog and category filtering
 const ProductReviews = () => {
 
-  // Product data with multiple products
+  // Expanded product data with multiple categories
   const products = [
     {
       id: 1,
@@ -75,7 +75,7 @@ const ProductReviews = () => {
     {
       id: 2,
       name: 'On Cloud 6 Men\'s Running Shoes',
-      category: 'Footwear',
+      category: 'Shoes',
       imageSrc: getImageUrl('/images/products/on-cloud-6-shoes.png'),
       fallbackImage: '/api/image-proxy?url=https://picsum.photos/400/500?random=12',
       imageAlt: 'On Cloud 6 Men\'s Running Shoes in Glacier White',
@@ -129,23 +129,211 @@ const ProductReviews = () => {
           ]
         }
       }
+    },
+    {
+      id: 3,
+      name: 'Nike Air Max 270 Men\'s Running Shoes',
+      category: 'Shoes',
+      imageSrc: getImageUrl('/images/products/nike-air-max-270.png'),
+      fallbackImage: '/api/image-proxy?url=https://picsum.photos/400/500?random=13',
+      imageAlt: 'Nike Air Max 270 Men\'s Running Shoes',
+      reviews: {
+        'nike-com': {
+          name: "Nike.com",
+          logo: "✓",
+          rating: 4.7,
+          reviewCount: 1247,
+          price: "$150.00",
+          availability: "In Stock",
+          storeUrl: "https://www.nike.com/t/air-max-270-mens-shoe-KkLcGR",
+          reviews: [
+            { rating: 5, text: "Incredible comfort and style. Perfect for daily wear.", author: "Mike R.", date: "2025-08-05" },
+            { rating: 5, text: "Best Air Max I've owned. Great cushioning.", author: "Sarah W.", date: "2025-08-03" },
+            { rating: 4, text: "Excellent shoes for both style and comfort.", author: "David L.", date: "2025-08-01" },
+            { rating: 5, text: "Perfect for walking and light running.", author: "Emma K.", date: "2025-07-29" },
+            { rating: 4, text: "Great quality and very comfortable.", author: "Chris M.", date: "2025-07-26" }
+          ]
+        },
+        'footlocker': {
+          name: "Foot Locker",
+          logo: "👟",
+          rating: 4.5,
+          reviewCount: 892,
+          price: "$145.99",
+          availability: "In Stock",
+          storeUrl: "https://www.footlocker.com/category/mens",
+          reviews: [
+            { rating: 5, text: "Amazing comfort and great style.", author: "John D.", date: "2025-08-04" },
+            { rating: 4, text: "Perfect for everyday wear.", author: "Lisa T.", date: "2025-08-02" },
+            { rating: 5, text: "Great cushioning and support.", author: "Robert K.", date: "2025-07-30" },
+            { rating: 4, text: "Excellent quality and fit.", author: "Maria G.", date: "2025-07-27" },
+            { rating: 5, text: "Best shoes for walking and casual wear.", author: "Tom B.", date: "2025-07-24" }
+          ]
+        },
+        'amazon': {
+          name: "Amazon",
+          logo: "📦",
+          rating: 4.3,
+          reviewCount: 2156,
+          price: "$139.99",
+          availability: "In Stock",
+          storeUrl: "https://www.amazon.com/Nike-Air-Max-270-Running/dp/B07K3R6C3L",
+          reviews: [
+            { rating: 4, text: "Great shoes for the price. Very comfortable.", author: "Alex K.", date: "2025-08-03" },
+            { rating: 5, text: "Perfect fit and amazing comfort.", author: "Rachel M.", date: "2025-08-01" },
+            { rating: 4, text: "Good quality and great value.", author: "Mark T.", date: "2025-07-28" },
+            { rating: 5, text: "Excellent for daily wear and walking.", author: "Sophie L.", date: "2025-07-25" },
+            { rating: 4, text: "Great shoes with good cushioning.", author: "Brian R.", date: "2025-07-22" }
+          ]
+        }
+      }
+    },
+    {
+      id: 4,
+      name: 'Adidas Ultraboost 22 Men\'s Running Shoes',
+      category: 'Shoes',
+      imageSrc: getImageUrl('/images/products/adidas-ultraboost-22.png'),
+      fallbackImage: '/api/image-proxy?url=https://picsum.photos/400/500?random=14',
+      imageAlt: 'Adidas Ultraboost 22 Men\'s Running Shoes',
+      reviews: {
+        'adidas-com': {
+          name: "Adidas.com",
+          logo: "🏃",
+          rating: 4.8,
+          reviewCount: 567,
+          price: "$190.00",
+          availability: "In Stock",
+          storeUrl: "https://www.adidas.com/us/ultraboost-22-shoes/GZ0127.html",
+          reviews: [
+            { rating: 5, text: "Incredible energy return and comfort.", author: "Carlos M.", date: "2025-08-05" },
+            { rating: 5, text: "Best running shoes I've ever worn.", author: "Jessica L.", date: "2025-08-03" },
+            { rating: 4, text: "Excellent for long distance running.", author: "Mark S.", date: "2025-08-01" },
+            { rating: 5, text: "Perfect cushioning and responsive feel.", author: "Emma R.", date: "2025-07-29" },
+            { rating: 4, text: "Great quality and amazing comfort.", author: "Alex T.", date: "2025-07-26" }
+          ]
+        },
+        'footlocker': {
+          name: "Foot Locker",
+          logo: "👟",
+          rating: 4.6,
+          reviewCount: 234,
+          price: "$185.99",
+          availability: "In Stock",
+          storeUrl: "https://www.footlocker.com/category/mens",
+          reviews: [
+            { rating: 5, text: "Amazing comfort and energy return.", author: "Tom B.", date: "2025-08-04" },
+            { rating: 4, text: "Great for marathon training.", author: "Rachel K.", date: "2025-08-02" },
+            { rating: 5, text: "Perfect fit and excellent cushioning.", author: "David L.", date: "2025-07-30" },
+            { rating: 4, text: "Excellent quality and performance.", author: "Jennifer M.", date: "2025-07-27" },
+            { rating: 5, text: "Best running shoes for long distances.", author: "Brian T.", date: "2025-07-24" }
+          ]
+        },
+        'amazon': {
+          name: "Amazon",
+          logo: "📦",
+          rating: 4.4,
+          reviewCount: 892,
+          price: "$179.99",
+          availability: "In Stock",
+          storeUrl: "https://www.amazon.com/Adidas-Ultraboost-Running-Shoes-Mens/dp/B09KX7V8QJ",
+          reviews: [
+            { rating: 4, text: "Great running shoes with excellent comfort.", author: "John D.", date: "2025-08-03" },
+            { rating: 5, text: "Perfect for daily runs and training.", author: "Lisa T.", date: "2025-08-01" },
+            { rating: 4, text: "Good quality and responsive feel.", author: "Robert K.", date: "2025-07-28" },
+            { rating: 5, text: "Excellent cushioning and support.", author: "Maria G.", date: "2025-07-25" },
+            { rating: 4, text: "Great shoes for serious runners.", author: "Tom B.", date: "2025-07-22" }
+          ]
+        }
+      }
+    },
+    {
+      id: 5,
+      name: 'Nike Dri-FIT Training T-Shirt',
+      category: 'Clothing',
+      imageSrc: getImageUrl('/images/products/nike-dri-fit-shirt.png'),
+      fallbackImage: '/api/image-proxy?url=https://picsum.photos/400/500?random=15',
+      imageAlt: 'Nike Dri-FIT Training T-Shirt',
+      reviews: {
+        'nike-com': {
+          name: "Nike.com",
+          logo: "✓",
+          rating: 4.5,
+          reviewCount: 456,
+          price: "$35.00",
+          availability: "In Stock",
+          storeUrl: "https://www.nike.com/t/dri-fit-training-t-shirt-1LqX9p",
+          reviews: [
+            { rating: 5, text: "Perfect for workouts. Great moisture wicking.", author: "Alex K.", date: "2025-08-04" },
+            { rating: 4, text: "Comfortable and breathable material.", author: "Lisa T.", date: "2025-08-02" },
+            { rating: 5, text: "Excellent for training and gym sessions.", author: "David P.", date: "2025-07-30" },
+            { rating: 4, text: "Great fit and very comfortable.", author: "Ryan S.", date: "2025-07-27" },
+            { rating: 5, text: "Perfect for high-intensity workouts.", author: "Amanda K.", date: "2025-07-24" }
+          ]
+        },
+        'amazon': {
+          name: "Amazon",
+          logo: "📦",
+          rating: 4.2,
+          reviewCount: 1234,
+          price: "$32.99",
+          availability: "In Stock",
+          storeUrl: "https://www.amazon.com/Nike-Dri-FIT-Training-T-Shirt/dp/B08K3R6C3L",
+          reviews: [
+            { rating: 4, text: "Good quality for the price.", author: "John D.", date: "2025-08-02" },
+            { rating: 5, text: "Great for workouts and training.", author: "Sarah W.", date: "2025-07-30" },
+            { rating: 4, text: "Comfortable and breathable.", author: "Robert K.", date: "2025-07-27" },
+            { rating: 5, text: "Perfect fit and great material.", author: "Maria G.", date: "2025-07-24" },
+            { rating: 4, text: "Excellent for gym sessions.", author: "Tom B.", date: "2025-07-21" }
+          ]
+        },
+        'dicks': {
+          name: "Dick's Sporting Goods",
+          logo: "🏪",
+          rating: 4.3,
+          reviewCount: 234,
+          price: "$34.99",
+          availability: "In Stock",
+          storeUrl: "https://www.dickssportinggoods.com/c/mens-clothing",
+          reviews: [
+            { rating: 4, text: "Good quality training shirt.", author: "Mike R.", date: "2025-08-03" },
+            { rating: 5, text: "Perfect for workouts and training.", author: "Emma K.", date: "2025-08-01" },
+            { rating: 4, text: "Comfortable and breathable.", author: "Chris M.", date: "2025-07-28" },
+            { rating: 5, text: "Great fit and excellent material.", author: "Sophie L.", date: "2025-07-25" },
+            { rating: 4, text: "Excellent for gym sessions.", author: "Brian R.", date: "2025-07-22" }
+          ]
+        }
+      }
     }
   ];
 
-  const [loading, setLoading] = useState(true);
+  // State management
+  const [selectedProduct, setSelectedProduct] = useState(products[0]);
   const [selectedSource, setSelectedSource] = useState('all');
-  const [selectedProduct, setSelectedProduct] = useState(products[0]); // Default to first product
+  const [selectedCategory, setSelectedCategory] = useState('All Categories');
+  const [loading, setLoading] = useState(false);
 
+  // Get unique categories
+  const categories = ['All Categories', ...new Set(products.map(product => product.category))];
+
+  // Filter products by category
+  const filteredProducts = selectedCategory === 'All Categories' 
+    ? products 
+    : products.filter(product => product.category === selectedCategory);
+
+  // Update selected product when category changes
   useEffect(() => {
-    // Simulate loading
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 1000);
+    if (selectedCategory !== 'All Categories') {
+      const categoryProducts = products.filter(product => product.category === selectedCategory);
+      if (categoryProducts.length > 0) {
+        setSelectedProduct(categoryProducts[0]);
+      }
+    } else {
+      setSelectedProduct(products[0]);
+    }
+    setSelectedSource('all'); // Reset filter when category changes
+  }, [selectedCategory]);
 
-    return () => clearTimeout(timer);
-  }, []);
-
-  // Update selected product when it changes
+  // Update selected product when product changes
   useEffect(() => {
     setSelectedSource('all'); // Reset filter when product changes
   }, [selectedProduct]);
@@ -189,6 +377,28 @@ const ProductReviews = () => {
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+        
+        {/* Category Filter */}
+        <div className="mb-8">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <h1 className="text-3xl font-bold tracking-tight text-gray-900 mb-4">Product Reviews & Ratings</h1>
+              <p className="text-gray-600">Find the highest rated products across multiple retailers</p>
+            </div>
+            <div className="mt-4 sm:mt-0">
+              <select 
+                value={selectedCategory} 
+                onChange={(e) => setSelectedCategory(e.target.value)}
+                className="border border-gray-300 rounded-md px-4 py-2 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              >
+                {categories.map((category) => (
+                  <option key={category} value={category}>{category}</option>
+                ))}
+              </select>
+            </div>
+          </div>
+        </div>
+
         {/* Product Overview Header */}
         <div className="mb-12">
           <div className="md:flex md:items-center md:justify-between">
@@ -217,8 +427,8 @@ const ProductReviews = () => {
         </div>
 
         {/* Product Grid */}
-        <div className="mt-6 grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-2 md:gap-y-0 lg:gap-x-8">
-          {products.map((product) => (
+        <div className="mt-6 grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-3 md:gap-y-0 lg:gap-x-8">
+          {filteredProducts.map((product) => (
             <div 
               key={product.id} 
               className={`group relative cursor-pointer border-2 rounded-lg p-4 transition-all ${
@@ -304,7 +514,7 @@ const ProductReviews = () => {
                   
                   {/* Store Link */}
                   <div className="mt-3">
-                                        {source.storeUrl && (
+                    {source.storeUrl && (
                       <a 
                         href={source.storeUrl} 
                         target="_blank" 
