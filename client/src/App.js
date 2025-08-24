@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import ProductReviews from './components/ProductReviews';
+import ProductPriceComparison from './components/ProductPriceComparison';
 
 const user = {
   name: 'Tom Cook',
@@ -14,6 +15,7 @@ const user = {
 const navigation = [
   { name: 'Dashboard', href: '/', current: true },
   { name: 'Product Reviews', href: '/reviews', current: false },
+  { name: 'Price Comparisons', href: '/comparisons', current: false },
   { name: 'Analytics', href: '/analytics', current: false },
   { name: 'Settings', href: '/settings', current: false },
 ];
@@ -97,6 +99,26 @@ const Dashboard = () => {
                 <dl>
                   <dt className="text-sm font-medium text-gray-500 truncate">Full-Stack Integration</dt>
                   <dd className="text-lg font-medium text-gray-900">Seamless integration between frontend and backend with real-time data flow.</dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-white overflow-hidden shadow rounded-lg">
+          <div className="p-5">
+            <div className="flex items-center">
+              <div className="flex-shrink-0">
+                <div className="w-8 h-8 bg-yellow-500 rounded-md flex items-center justify-center">
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                  </svg>
+                </div>
+              </div>
+              <div className="ml-5 w-0 flex-1">
+                <dl>
+                  <dt className="text-sm font-medium text-gray-500 truncate">Price Comparisons</dt>
+                  <dd className="text-lg font-medium text-gray-900">Real-time price monitoring across multiple retailers with automated updates.</dd>
                 </dl>
               </div>
             </div>
@@ -273,6 +295,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/reviews" element={<ProductReviews />} />
+            <Route path="/comparisons" element={<ProductPriceComparison productId="nike-tech-fleece-hoodie" />} />
             <Route path="/analytics" element={<div className="p-8 text-center text-gray-500">Analytics page coming soon...</div>} />
             <Route path="/settings" element={<div className="p-8 text-center text-gray-500">Settings page coming soon...</div>} />
           </Routes>

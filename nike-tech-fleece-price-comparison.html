@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike Tech Fleece Hoodie Price Comparison</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #000 0%, #333 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 30px;
+            background: #f8f9fa;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .products-section {
+            padding: 40px;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: #333;
+            text-align: center;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .product-image {
+            height: 200px;
+            background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 0.9rem;
+        }
+        
+        .product-info {
+            padding: 25px;
+        }
+        
+        .product-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        
+        .product-price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #28a745;
+            margin-bottom: 15px;
+        }
+        
+        .product-details {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        
+        .product-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .feature-tag {
+            background: #e9ecef;
+            color: #495057;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .retailer-info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .retailer-text {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .price-range {
+            background: #e8f5e8;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .price-range h3 {
+            color: #28a745;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .price-bars {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+        
+        .price-bar {
+            text-align: center;
+        }
+        
+        .price-label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        
+        .price-value {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            font-size: 0.9rem;
+        }
+        
+        .data-source {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            font-size: 0.8rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Nike Tech Fleece Hoodie</h1>
+            <p>Comprehensive Price Comparison & Best Deals</p>
+        </div>
+        
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number">$60</div>
+                <div class="stat-label">Lowest Price</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">$160</div>
+                <div class="stat-label">Highest Price</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">$75</div>
+                <div class="stat-label">Average Price</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">9+</div>
+                <div class="stat-label">Retailers</div>
+            </div>
+        </div>
+        
+        <div class="price-range">
+            <h3>Price Range Analysis</h3>
+            <div class="price-bars">
+                <div class="price-bar">
+                    <div class="price-label">Budget</div>
+                    <div class="price-value">$60-75</div>
+                </div>
+                <div class="price-bar">
+                    <div class="price-label">Mid-Range</div>
+                    <div class="price-value">$75-90</div>
+                </div>
+                <div class="price-bar">
+                    <div class="price-label">Premium</div>
+                    <div class="price-value">$90-160</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="products-section">
+            <h2 class="section-title">Available Hoodie Options</h2>
+            
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">Nike Tech Fleece Hoodie Image</div>
+                    <div class="product-info">
+                        <div class="product-name">Nike Tech Men's Fleece Windrunner Full Zip Hoodie - Black</div>
+                        <div class="product-price">$74.00</div>
+                        <div class="product-details">Premium fleece material with full zip design. Features organic fabric, cotton, polyester, and recycled materials.</div>
+                        <div class="product-features">
+                            <span class="feature-tag">Full Zip</span>
+                            <span class="feature-tag">Organic</span>
+                            <span class="feature-tag">Recycled</span>
+                            <span class="feature-tag">Pockets</span>
+                        </div>
+                        <div class="retailer-info">
+                            <div class="retailer-text">Available at 9+ stores</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">Nike Tech Fleece Hoodie Image</div>
+                    <div class="product-info">
+                        <div class="product-name">Nike Tech Men's Full Zip Windrunner Hoodie - Dark Grey Heather/Black</div>
+                        <div class="product-price">$80.00</div>
+                        <div class="product-details">Classic Windrunner design with premium fleece construction. Made from cotton, fleece, and recycled materials.</div>
+                        <div class="product-features">
+                            <span class="feature-tag">Windrunner</span>
+                            <span class="feature-tag">Full Zip</span>
+                            <span class="feature-tag">Recycled</span>
+                            <span class="feature-tag">Hood</span>
+                        </div>
+                        <div class="retailer-info">
+                            <div class="retailer-text">Available at 9+ stores</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">Nike Tech Fleece Hoodie Image</div>
+                    <div class="product-info">
+                        <div class="product-name">Nike Sportswear Tech Fleece Windrunner Men's Full Zip Hoodie - Dark Grey Heather/Black</div>
+                        <div class="product-price">$75.00</div>
+                        <div class="product-details">Sportswear collection hoodie with organic fabric construction. Features fleece, cotton, and recycled materials.</div>
+                        <div class="product-features">
+                            <span class="feature-tag">Sportswear</span>
+                            <span class="feature-tag">Organic</span>
+                            <span class="feature-tag">Fleece</span>
+                            <span class="feature-tag">Recycled</span>
+                        </div>
+                        <div class="retailer-info">
+                            <div class="retailer-text">Available at 9+ stores</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">Nike Tech Fleece Hoodie Image</div>
+                    <div class="product-info">
+                        <div class="product-name">Nike Tech Men's Fleece Windrunner Full Zip Jacket - Black/Dark Grey Heather</div>
+                        <div class="product-price">$78.00</div>
+                        <div class="product-details">Premium jacket-style hoodie with full zip design. Constructed from polyester, cotton, and organic materials.</div>
+                        <div class="product-features">
+                            <span class="feature-tag">Jacket Style</span>
+                            <span class="feature-tag">Full Zip</span>
+                            <span class="feature-tag">Organic</span>
+                            <span class="feature-tag">Pockets</span>
+                        </div>
+                        <div class="retailer-info">
+                            <div class="retailer-text">Available at 9+ stores</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">Nike Tech Fleece Hoodie Image</div>
+                    <div class="product-info">
+                        <div class="product-name">Nike Tech Men's Full Zip Windrunner Hoodie - Obsidian/Black</div>
+                        <div class="product-price">$84.53</div>
+                        <div class="product-details">Premium Obsidian colorway with full zip design. Features cotton, fleece, and organic materials.</div>
+                        <div class="product-features">
+                            <span class="feature-tag">Obsidian</span>
+                            <span class="feature-tag">Full Zip</span>
+                            <span class="feature-tag">Organic</span>
+                            <span class="feature-tag">Hood</span>
+                        </div>
+                        <div class="retailer-info">
+                            <div class="retailer-text">Available at 9+ stores</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">Nike Tech Fleece Hoodie Image</div>
+                    <div class="product-info">
+                        <div class="product-name">Nike Tech Men's Full Zip Windrunner Hoodie - Glacier Blue/Black</div>
+                        <div class="product-price">$69.99</div>
+                        <div class="product-details">Best value option with Glacier Blue colorway. Features breathable fleece and durable construction.</div>
+                        <div class="product-features">
+                            <span class="feature-tag">Glacier Blue</span>
+                            <span class="feature-tag">Breathable</span>
+                            <span class="feature-tag">Durable</span>
+                            <span class="feature-tag">Best Value</span>
+                        </div>
+                        <div class="retailer-info">
+                            <div class="retailer-text">Available at 9 stores</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">Nike Tech Fleece Hoodie Image</div>
+                    <div class="product-info">
+                        <div class="product-name">Nike Tech Windrunner Men's Fleece Full Zip Jacket - Black</div>
+                        <div class="product-price">$160.00</div>
+                        <div class="product-details">Premium jacket with advanced features including reflectors and enhanced construction. Top-tier option.</div>
+                        <div class="product-features">
+                            <span class="feature-tag">Premium</span>
+                            <span class="feature-tag">Reflectors</span>
+                            <span class="feature-tag">Advanced</span>
+                            <span class="feature-tag">Top-Tier</span>
+                        </div>
+                        <div class="retailer-info">
+                            <div class="retailer-text">Available at 3 stores</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="data-source">
+            <p>Price data sourced from multiple retailers including Klarna, Foot Locker, Champs Sports, and more. Prices may vary by location and availability.</p>
+        </div>
+        
+        <div class="footer">
+            <p>&copy; 2025 Nike Tech Fleece Price Comparison | Data gathered using Firecrawl MCP</p>
+        </div>
+    </div>
+</body>
+</html>
